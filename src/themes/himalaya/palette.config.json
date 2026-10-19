@@ -1,0 +1,47 @@
+{
+  "recipe": "astryx-oklch-v1",
+  "vibrancy": 50,
+  "modeStrategy": "light-and-dark",
+  "families": [
+    {
+      "id": "slate",
+      "name": "Slate",
+      "seed": "#526d7c",
+      "kind": "neutral"
+    },
+    {
+      "id": "sky",
+      "name": "Sky",
+      "seed": "#00a6d6",
+      "anchors": [
+        {
+          "mode": "light",
+          "stop": 60,
+          "color": "#00a6d6",
+          "policy": "bounded",
+          "maxDeltaE": 4
+        }
+      ]
+    },
+    {
+      "id": "meadow",
+      "name": "Meadow",
+      "seed": "#8daa1e",
+      "anchors": [
+        {
+          "mode": "light",
+          "stop": 65,
+          "color": "#8daa1e",
+          "policy": "bounded",
+          "maxDeltaE": 4
+        }
+      ]
+    },
+    {
+      "id": "summit",
+      "name": "Summit",
+      "seed": "#cd133e"
+    }
+  ],
+  "neutralProfile": "custom"
+}
