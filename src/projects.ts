@@ -39,6 +39,24 @@ export type Contribution = {
 };
 
 export const OLD_REPO = 'https://github.com/yadvlabs/old';
+export const HACKLAB_REPO = 'https://github.com/yadvlabs/hacklab';
+
+/** Topics in the hacklab scratchpad, shown as tags. */
+export const hacklabTopics = [
+  'Algorithms',
+  'Competitive programming',
+  'Stripe CTF3',
+  'Design patterns',
+  'Lab work',
+  'RabbitMQ',
+  'Erlang',
+  'Elixir',
+  'Haskell',
+  'Lisp',
+  'Rust',
+  'Go',
+  'x86 assembly',
+];
 
 export const projects: Project[] = [
   {

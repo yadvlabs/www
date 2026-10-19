@@ -11,6 +11,8 @@ import {List, ListItem} from '@astryxdesign/core/List';
 import {SiteShell} from '../components/SiteShell';
 import {
   OLD_REPO,
+  HACKLAB_REPO,
+  hacklabTopics,
   contributions,
   oldProjectGroups,
   oldProjectHref,
@@ -80,6 +82,32 @@ export default function Old() {
           ))}
         </List>
       ))}
+
+      <Card variant="muted" padding={6}>
+        <VStack gap={4}>
+          <VStack gap={2}>
+            <Heading level={2}>Hacklab</Heading>
+            <Text type="body" color="secondary" textWrap="pretty">
+              A scratchpad of small hacks, tools and learning exercises:
+              algorithms and competitive programming (Project Euler, SPOJ,
+              Codeforces, USACO), Stripe CTF3 levels, design patterns,
+              university lab work, and first steps in a dozen languages.
+            </Text>
+          </VStack>
+          <HStack gap={2} wrap="wrap">
+            {hacklabTopics.map(topic => (
+              <Badge key={topic} variant="blue" label={topic} />
+            ))}
+          </HStack>
+          <HStack>
+            <Button
+              label="Browse hacklab on GitHub"
+              href={HACKLAB_REPO}
+              endContent={<Icon icon="externalLink" />}
+            />
+          </HStack>
+        </VStack>
+      </Card>
     </SiteShell>
   );
 }
