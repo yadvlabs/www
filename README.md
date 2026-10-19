@@ -15,11 +15,19 @@ npm run build     # typecheck + production build into dist/
 npm run preview   # serve the production build
 ```
 
-## Projects
+## Pages and projects
 
-Projects live in [`src/projects.ts`](src/projects.ts): `featured` is the
-showcased project, and `stealthProjects` are the placeholders. Images are in
-`public/images/`.
+The site has two pages, each a Vite entry point:
+
+- `/` (`index.html` → `src/pages/Home.tsx`): showcased projects, stealth
+  placeholders and a link to the archive
+- `/old/` (`old/index.html` → `src/pages/Old.tsx`): old experiments from
+  [yadvlabs/old](https://github.com/yadvlabs/old)
+
+Both share the header, footer and theme in `src/components/SiteShell.tsx`.
+All content lives in [`src/projects.ts`](src/projects.ts): `projects` are the
+showcased projects, `stealthProjects` are the placeholders and
+`oldProjectGroups` lists the archive. Images are in `public/images/`.
 
 ## Theme
 

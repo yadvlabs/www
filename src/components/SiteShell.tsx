@@ -1,0 +1,94 @@
+import type {ReactNode} from 'react';
+import {Theme} from '@astryxdesign/core/theme';
+import {VStack, HStack, Layout, LayoutContent} from '@astryxdesign/core/Layout';
+import {Text} from '@astryxdesign/core/Text';
+import {Link} from '@astryxdesign/core/Link';
+import {Divider} from '@astryxdesign/core/Divider';
+import {yadvTheme} from '../themes/yadv/yadv';
+import '../themes/yadv/yadv.css';
+import '@astryxdesign/theme-stone/fonts.css';
+import {Logo} from './Logo';
+
+export const GITHUB_ORG = 'https://github.com/yadvlabs';
+export const PARENT_SITE = 'https://yadv.in';
+
+type Page = 'home' | 'old';
+
+const NAV: ReadonlyArray<{page: Page; label: string; href: string}> = [
+  {page: 'home', label: 'Projects', href: '/'},
+  {page: 'old', label: 'Old experiments', href: '/old/'},
+];
+
+/** Theme, page frame, header and footer shared by every page. */
+export function SiteShell({page, children}: {page: Page; children: ReactNode}) {
+  return (
+    <Theme theme={yadvTheme}>
+      <Layout
+        height="fill"
+        contentWidth={1200}
+        content={
+          <LayoutContent padding={6}>
+            <VStack gap={10}>
+              <Header page={page} />
+              {children}
+              <VStack gap={4}>
+                <Divider />
+                <Footer />
+              </VStack>
+            </VStack>
+          </LayoutContent>
+        }
+      />
+    </Theme>
+  );
+}
+
+function Header({page}: {page: Page}) {
+  return (
+    <HStack hAlign="between" vAlign="center" gap={3} wrap="wrap">
+      <Link href="/" color="primary" label="yadv labs home">
+        <HStack gap={2} vAlign="center">
+          <Logo size={32} />
+          <Text type="large" weight="bold" color="inherit">
+            yadv labs
+          </Text>
+        </HStack>
+      </Link>
+      <HStack gap={4} vAlign="center" wrap="wrap" as="nav">
+        {NAV.map(item => (
+          <Link
+            key={item.page}
+            href={item.href}
+            isStandalone
+            color={item.page === page ? 'primary' : 'secondary'}
+            weight={item.page === page ? 'semibold' : undefined}
+            aria-current={item.page === page ? 'page' : undefined}>
+            {item.label}
+          </Link>
+        ))}
+        <Link href={PARENT_SITE} isStandalone color="secondary">
+          yadv.in
+        </Link>
+        <Link href={GITHUB_ORG} isStandalone color="secondary">
+          GitHub
+        </Link>
+      </HStack>
+    </HStack>
+  );
+}
+
+function Footer() {
+  return (
+    <HStack hAlign="between" vAlign="center" wrap="wrap" gap={3}>
+      <Text type="supporting">
+        © {new Date().getFullYear()} yadv labs · labs.yadv.in · part of{' '}
+        <Link href={PARENT_SITE} size="sm" color="inherit" hasUnderline>
+          yadv.in
+        </Link>
+      </Text>
+      <Link href={GITHUB_ORG} isStandalone color="secondary">
+        github.com/yadvlabs
+      </Link>
+    </HStack>
+  );
+}
