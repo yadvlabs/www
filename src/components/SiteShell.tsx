@@ -73,7 +73,7 @@ function Footer() {
   return (
     <HStack hAlign="between" vAlign="center" wrap="wrap" gap={3}>
       <Text type="supporting">
-        © {new Date().getFullYear()} yadv labs · labs.yadv.in · part of{' '}
+        © {new Date().getFullYear()} Rohit Yadav ·{' '}
         <Link href={PARENT_SITE} size="sm" color="inherit" hasUnderline>
           yadv.in
         </Link>
