@@ -1,7 +1,7 @@
 @import '@astryxdesign/core/reset.css';
 @import '@astryxdesign/core/astryx.css';
 
-/* The Matcha theme's CSS and fonts are imported by src/astryx-themes.ts. */
+/* The theme's CSS and fonts are imported by App.tsx (src/themes/yadv/). */
 body {
   background: var(--color-background-body);
 }

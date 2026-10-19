@@ -3,7 +3,7 @@
 Source for [yadv.in](https://yadv.in), the home of yadv labs' experiments and projects.
 
 Built with [Astryx](https://astryx.atmeta.com) (React 19 + StyleX design system)
-and Vite, using Astryx's built-in **Matcha** theme.
+and Vite, using Astryx's Matcha theme with the Stone theme's fonts.
 
 ## Develop
 
@@ -22,10 +22,16 @@ showcased project, and `stealthProjects` are the placeholders. Images are in
 
 ## Theme
 
-The theme is wired by `src/astryx-themes.ts`, which `npx astryx theme add` generates.
-To switch themes, install the theme package, then run
-`npx astryx theme add <slug>` and `npx astryx theme use <slug>`. The Astryx
-packages are pinned to the same version, so upgrade them together.
+`src/themes/yadv/yadvTheme.ts` extends Astryx's built-in **Matcha** theme and
+swaps in the **Stone** theme's typefaces: Montserrat for headings, Figtree for
+body text and JetBrains Mono for code. `fonts.css` loads them. After editing the
+theme, or after upgrading Astryx, rebuild it:
+
+```sh
+npx astryx theme build src/themes/yadv/yadvTheme.ts
+```
+
+The Astryx packages are pinned to the same version, so upgrade them together.
 
 ## Deploy
 

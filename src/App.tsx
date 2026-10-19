@@ -11,7 +11,9 @@ import {Button} from '@astryxdesign/core/Button';
 import {Link} from '@astryxdesign/core/Link';
 import {Icon} from '@astryxdesign/core/Icon';
 import {Divider} from '@astryxdesign/core/Divider';
-import {themes, defaultThemeSlug} from './astryx-themes';
+import {yadvTheme} from './themes/yadv/yadv';
+import './themes/yadv/yadv.css';
+import './themes/yadv/fonts.css';
 import {Logo} from './components/Logo';
 import {featured, stealthProjects} from './projects';
 import type {Project, StealthProject} from './projects';
@@ -33,7 +35,7 @@ const featuredImage: CSSProperties = {...image, minHeight: 280};
 
 export default function App() {
   return (
-    <Theme theme={themes[defaultThemeSlug]}>
+    <Theme theme={yadvTheme}>
       <Layout
         height="fill"
         contentWidth={1200}
