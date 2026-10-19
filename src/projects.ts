@@ -30,6 +30,14 @@ export type OldProjectGroup = {
   projects: OldProject[];
 };
 
+export type Contribution = {
+  name: string;
+  about: string;
+  summary: string;
+  years: string;
+  links: ReadonlyArray<{label: string; href: string}>;
+};
+
 export const OLD_REPO = 'https://github.com/yadvlabs/old';
 
 export const projects: Project[] = [
@@ -88,6 +96,52 @@ export const stealthProjects: StealthProject[] = [
     summary: 'Early sketches and ideas. Watch this space.',
     tag: 'Exploring',
     image: '/images/stealth-3.svg',
+  },
+];
+
+export const contributions: Contribution[] = [
+  {
+    name: 'VLMC',
+    about: "VideoLAN's free, cross-platform non-linear video editor.",
+    summary:
+      'About 200 commits, starting as a Google Summer of Code project: sharing to YouTube and Vimeo, Windows and macOS packaging, translations and renderer fixes.',
+    years: '2010–12',
+    links: [
+      {
+        label: 'View commits',
+        href: 'https://code.videolan.org/videolan/vlmc/-/commits/master?author=rohityadav89@gmail.com',
+      },
+    ],
+  },
+  {
+    name: 'VLC for Android',
+    about: 'The VLC media player for Android.',
+    summary:
+      'Early JNI bindings for the LibVLC media player, and a fix for a media player memory leak.',
+    years: '2011',
+    links: [
+      {
+        label: 'View commits',
+        href: 'https://github.com/videolan/vlc-android/commits?author=yadvr',
+      },
+    ],
+  },
+  {
+    name: 'Haiku',
+    about: 'An open source operating system inspired by BeOS.',
+    summary:
+      'Patches that fix file permission checks in the BFS and ext2 file system drivers (ticket #6750).',
+    years: '2010',
+    links: [
+      {
+        label: 'BFS commit',
+        href: 'https://github.com/haiku/haiku/commit/48ec4fbb40a9ac5327e0351486946403d0b533b8',
+      },
+      {
+        label: 'ext2 commit',
+        href: 'https://github.com/haiku/haiku/commit/ea75a051ad0471a7fdeecd3be146bf73ca640716',
+      },
+    ],
   },
 ];
 

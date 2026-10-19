@@ -67,8 +67,8 @@ export default function Home() {
           <VStack gap={1}>
             <Heading level={2}>Old experiments</Heading>
             <Text type="body" color="secondary" textWrap="pretty">
-              {oldProjectCount} earlier projects from 2008 to 2013, from LAN
-              messengers and Qt apps to RabbitMQ tooling.
+              {oldProjectCount} earlier projects from 2008 to 2013, plus
+              contributions to VLMC, VLC for Android and Haiku.
             </Text>
           </VStack>
           <Link href="/old/" isStandalone weight="semibold">

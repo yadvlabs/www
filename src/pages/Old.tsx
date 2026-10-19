@@ -3,11 +3,19 @@ import {Grid} from '@astryxdesign/core/Grid';
 import {Heading} from '@astryxdesign/core/Heading';
 import {Text} from '@astryxdesign/core/Text';
 import {Badge} from '@astryxdesign/core/Badge';
+import {Card} from '@astryxdesign/core/Card';
+import {Link} from '@astryxdesign/core/Link';
 import {Button} from '@astryxdesign/core/Button';
 import {Icon} from '@astryxdesign/core/Icon';
 import {List, ListItem} from '@astryxdesign/core/List';
 import {SiteShell} from '../components/SiteShell';
-import {OLD_REPO, oldProjectGroups, oldProjectHref} from '../projects';
+import {
+  OLD_REPO,
+  contributions,
+  oldProjectGroups,
+  oldProjectHref,
+} from '../projects';
+import type {Contribution} from '../projects';
 
 export default function Old() {
   return (
@@ -18,8 +26,9 @@ export default function Old() {
         </Heading>
         <VStack gap={3} hAlign="start">
           <Text type="large" color="secondary" textWrap="pretty">
-            Projects from 2008 to 2013, kept as they were in one archive
-            repository. They are no longer maintained.
+            Open source contributions and earlier projects from 2008 to 2013.
+            The projects are kept as they were in one archive repository and
+            are no longer maintained.
           </Text>
           <Button
             label="Browse the archive on GitHub"
@@ -28,6 +37,18 @@ export default function Old() {
           />
         </VStack>
       </Grid>
+
+      <VStack gap={4}>
+        <Heading level={2}>Open source contributions</Heading>
+        <Grid columns={{minWidth: 280, max: 3}} gap={4}>
+          {contributions.map(contribution => (
+            <ContributionCard
+              key={contribution.name}
+              contribution={contribution}
+            />
+          ))}
+        </Grid>
+      </VStack>
 
       {oldProjectGroups.map(group => (
         <List
@@ -60,5 +81,33 @@ export default function Old() {
         </List>
       ))}
     </SiteShell>
+  );
+}
+
+function ContributionCard({contribution}: {contribution: Contribution}) {
+  return (
+    <Card padding={5}>
+      <VStack gap={3}>
+        <VStack gap={1}>
+          <HStack hAlign="between" vAlign="center" gap={2}>
+            <Heading level={3}>{contribution.name}</Heading>
+            <Text type="supporting" hasTabularNumbers>
+              {contribution.years}
+            </Text>
+          </HStack>
+          <Text type="supporting">{contribution.about}</Text>
+        </VStack>
+        <Text type="body" textWrap="pretty">
+          {contribution.summary}
+        </Text>
+        <HStack gap={4} wrap="wrap">
+          {contribution.links.map(link => (
+            <Link key={link.href} href={link.href} isStandalone>
+              {link.label}
+            </Link>
+          ))}
+        </HStack>
+      </VStack>
+    </Card>
   );
 }

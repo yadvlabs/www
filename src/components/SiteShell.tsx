@@ -14,11 +14,6 @@ export const PARENT_SITE = 'https://yadv.in';
 
 type Page = 'home' | 'old';
 
-const NAV: ReadonlyArray<{page: Page; label: string; href: string}> = [
-  {page: 'home', label: 'Projects', href: '/'},
-  {page: 'old', label: 'Old experiments', href: '/old/'},
-];
-
 /** Theme, page frame, header and footer shared by every page. */
 export function SiteShell({page, children}: {page: Page; children: ReactNode}) {
   return (
@@ -55,17 +50,14 @@ function Header({page}: {page: Page}) {
         </HStack>
       </Link>
       <HStack gap={4} vAlign="center" wrap="wrap" as="nav">
-        {NAV.map(item => (
-          <Link
-            key={item.page}
-            href={item.href}
-            isStandalone
-            color={item.page === page ? 'primary' : 'secondary'}
-            weight={item.page === page ? 'semibold' : undefined}
-            aria-current={item.page === page ? 'page' : undefined}>
-            {item.label}
-          </Link>
-        ))}
+        <Link
+          href="/"
+          isStandalone
+          color={page === 'home' ? 'primary' : 'secondary'}
+          weight={page === 'home' ? 'semibold' : undefined}
+          aria-current={page === 'home' ? 'page' : undefined}>
+          Projects
+        </Link>
         <Link href={PARENT_SITE} isStandalone color="secondary">
           yadv.in
         </Link>
