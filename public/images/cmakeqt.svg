@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="cmakeqt: a CMakeLists file building into Linux, macOS and Windows packages">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E4E8D2"/>
+      <stop offset="1" stop-color="#C0CBA9"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#3E481D" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <circle cx="690" cy="90" r="140" fill="#F0F0E0" opacity="0.5"/>
+  <circle cx="90" cy="540" r="110" fill="#707E46" opacity="0.15"/>
+
+  <g transform="translate(400 300) scale(0.82) translate(-400 -300)">
+  <!-- Editor window -->
+  <g filter="url(#shadow)">
+    <rect x="70" y="90" width="430" height="360" rx="18" fill="#1e2016"/>
+    <rect x="70" y="90" width="430" height="44" rx="18" fill="#2b2f1f"/>
+    <rect x="70" y="116" width="430" height="18" fill="#2b2f1f"/>
+    <circle cx="100" cy="112" r="7" fill="#ff7a6b"/>
+    <circle cx="124" cy="112" r="7" fill="#ffc940"/>
+    <circle cx="148" cy="112" r="7" fill="#6dbf2a"/>
+    <text x="285" y="118" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" fill="#94a468">CMakeLists.txt</text>
+    <g font-family="JetBrains Mono, ui-monospace, monospace" font-size="17">
+      <text x="98" y="178" fill="#C0CBA9"><tspan fill="#d9b25c">project</tspan>(myapp CXX)</text>
+      <text x="98" y="210" fill="#C0CBA9"><tspan fill="#d9b25c">find_package</tspan>(Qt6 REQUIRED</text>
+      <text x="98" y="236" fill="#C0CBA9">  COMPONENTS Widgets)</text>
+      <text x="98" y="268" fill="#C0CBA9"><tspan fill="#d9b25c">qt_add_executable</tspan>(myapp</text>
+      <text x="98" y="294" fill="#C0CBA9">  ${SOURCES})</text>
+      <text x="98" y="326" fill="#C0CBA9"><tspan fill="#d9b25c">qt_add_translations</tspan>(myapp</text>
+      <text x="98" y="352" fill="#C0CBA9">  TS_FILES ${TS})</text>
+      <text x="98" y="384" fill="#C0CBA9"><tspan fill="#d9b25c">include</tspan>(CPack)</text>
+      <rect x="98" y="402" width="11" height="20" fill="#C0CBA9" opacity="0.8"/>
+    </g>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M520 270 C 560 270, 560 270, 590 270" stroke="#3E481D" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M582 258 L596 270 L582 282" stroke="#3E481D" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Packages -->
+  <g font-family="DM Sans, system-ui, sans-serif" font-weight="700" text-anchor="middle" filter="url(#shadow)">
+    <g transform="translate(615 120)">
+      <rect width="120" height="84" rx="14" fill="#FFFFFF"/>
+      <text x="60" y="40" font-size="22" fill="#3E481D">.deb</text>
+      <text x="60" y="64" font-size="14" font-weight="500" fill="#707E46">.rpm</text>
+    </g>
+    <g transform="translate(615 228)">
+      <rect width="120" height="84" rx="14" fill="#3E481D"/>
+      <text x="60" y="40" font-size="22" fill="#F0F0E0">.dmg</text>
+      <text x="60" y="64" font-size="14" font-weight="500" fill="#C0CBA9">.app</text>
+    </g>
+    <g transform="translate(615 336)">
+      <rect width="120" height="84" rx="14" fill="#FFFFFF"/>
+      <text x="60" y="40" font-size="22" fill="#3E481D">.exe</text>
+      <text x="60" y="64" font-size="14" font-weight="500" fill="#707E46">NSIS</text>
+    </g>
+  </g>
+
+  <text x="70" y="520" font-family="DM Sans, system-ui, sans-serif" font-size="20" font-weight="600" fill="#3E481D">C++ · Qt · CMake → Linux · macOS · Windows</text>
+  </g>
+</svg>

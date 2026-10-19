@@ -2,7 +2,8 @@
 
 Source for [yadv.in](https://yadv.in), the home of yadv labs' experiments and projects.
 
-Built with [Astryx](https://astryx.atmeta.com) (React 19 + StyleX design system) and Vite.
+Built with [Astryx](https://astryx.atmeta.com) (React 19 + StyleX design system)
+and Vite, using Astryx's built-in **Matcha** theme.
 
 ## Develop
 
@@ -15,31 +16,17 @@ npm run preview   # serve the production build
 
 ## Projects
 
-Projects are listed in [`src/projects.ts`](src/projects.ts). Add an entry to
-`projects` for a public project, or to `stealthProjects` for one still under wraps.
+Projects live in [`src/projects.ts`](src/projects.ts): `featured` is the
+showcased project, and `stealthProjects` are the placeholders. Images are in
+`public/images/`.
 
 ## Theme
 
-The site uses a custom Astryx theme, **Himalaya**, in `src/themes/himalaya/`. Its
-colours come from a Himachal meadow: cyan sky, green grass, blue-grey ridges and
-snow.
-
-- `palette.config.json`: the seed colours (slate, sky, meadow, summit)
-- `himalaya.palette.ts`: the generated tonal palette
-- `himalayaTheme.ts`: the theme source, which extends `@astryxdesign/theme-neutral`
-- `himalaya.css` / `himalaya.js`: built output, imported by the app
-
-After changing the seeds or the theme source, regenerate:
-
-```sh
-npx astryx theme palette generate src/themes/himalaya/palette.config.json \
-  --out src/themes/himalaya/himalaya.palette.ts --overwrite
-npx astryx theme build src/themes/himalaya/himalayaTheme.ts
-```
+The theme is wired by `src/astryx-themes.ts`, which `npx astryx theme add` generates.
+To switch themes, install the theme package, then run
+`npx astryx theme add <slug>` and `npx astryx theme use <slug>`. The Astryx
+packages are pinned to the same version, so upgrade them together.
 
 ## Deploy
 
-Pushes to `main` build and deploy to GitHub Pages
-(`.github/workflows/deploy.yml`). `public/CNAME` points the site at `yadv.in`.
-In the repo settings, set **Pages → Source** to **GitHub Actions**. Then point
-yadv.in's DNS at GitHub Pages (A records for the apex domain).
+Deployed with Cloudflare. Build command: `npm run build`, output directory: `dist`.
