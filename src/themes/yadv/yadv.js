@@ -6,8 +6,8 @@
  * Core: @astryxdesign/core@0.7.1
  */
 
-import { matchaTheme } from '@astryxdesign/theme-matcha';
-const themeIcons = matchaTheme["icons"];
+import { stoneTheme } from '@astryxdesign/theme-stone';
+const themeIcons = stoneTheme["icons"];
 /**
  * yadv theme — built by `npx astryx theme build`
  * Import the CSS file alongside this module:
@@ -85,131 +85,116 @@ export const yadvTheme = {
     "--font-family-body": "Figtree, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
     "--font-family-heading": "Montserrat, \"Figtree\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
     "--font-family-code": "\"JetBrains Mono\", \"SF Mono\", Monaco, Consolas, monospace",
-    "--color-syntax-keyword": "light-dark(#5a6b2a, #a8bf6a)",
-    "--color-syntax-string": "light-dark(#2e6b4a, #7bc49e)",
-    "--color-syntax-comment": "light-dark(#707E46, #707E46)",
-    "--color-syntax-number": "light-dark(#8c6b30, #d4b870)",
-    "--color-syntax-function": "light-dark(#3a5e8c, #7ba8d4)",
-    "--color-syntax-type": "light-dark(#6b4a8c, #b08ed4)",
-    "--color-syntax-variable": "light-dark(#3E481D, #C0CBA9)",
-    "--color-syntax-operator": "light-dark(#707E46, #94a468)",
-    "--color-syntax-constant": "light-dark(#8c6b30, #d4b870)",
-    "--color-syntax-tag": "light-dark(#8c3a3a, #d47a7a)",
-    "--color-syntax-attribute": "light-dark(#7c5e3a, #c4a882)",
-    "--color-syntax-property": "light-dark(#3a7c6b, #70c4b0)",
-    "--color-syntax-punctuation": "light-dark(#566a39, #92af6a)",
-    "--color-syntax-background": "light-dark(#F0F0E0, #1a1c14)",
-    "--color-syntax-added": "color-mix(in srgb, var(--color-success-muted) 25%, transparent)",
-    "--color-syntax-removed": "color-mix(in srgb, var(--color-error-muted) 25%, transparent)",
+    "--color-syntax-keyword": "light-dark(#645a72, #b2a7c1)",
+    "--color-syntax-string": "light-dark(#4e6357, #9bb19a)",
+    "--color-syntax-comment": "light-dark(#5e5e5e, #ababb0)",
+    "--color-syntax-number": "light-dark(#755752, #bea792)",
+    "--color-syntax-function": "light-dark(#506072, #99adc6)",
+    "--color-syntax-type": "light-dark(#645a72, #b2a7c1)",
+    "--color-syntax-variable": "light-dark(#5e5e5e, #ababb0)",
+    "--color-syntax-operator": "light-dark(#5e5e5e, #ababb0)",
+    "--color-syntax-constant": "light-dark(#755752, #bea792)",
+    "--color-syntax-tag": "light-dark(#775751, #c7a39d)",
+    "--color-syntax-attribute": "light-dark(#79693f, #b6aa90)",
+    "--color-syntax-property": "light-dark(#4e6357, #94b2a0)",
+    "--color-syntax-punctuation": "light-dark(#5e5e5e, #ababb0)",
+    "--color-syntax-background": "light-dark(#f3f3f5, #171719)",
+    "--color-syntax-added": "light-dark(#d0e9ce40, #b4cdb233)",
+    "--color-syntax-removed": "light-dark(#f9dcd740, #dcc0bc33)",
     "--color-syntax-diff-header": "transparent",
-    "--color-syntax-added-marker": "var(--color-syntax-punctuation)",
-    "--color-syntax-removed-marker": "var(--color-syntax-punctuation)",
-    "--color-accent": "light-dark(#3E481D, #C0CBA9)",
-    "--color-accent-muted": "light-dark(#3E481D14, #C0CBA920)",
-    "--color-neutral": "light-dark(#3E481D0F, #C0CBA91A)",
-    "--color-background-surface": "light-dark(#FFFFFF, #1a1c14)",
-    "--color-background-body": "light-dark(#F0F0E0, #12140e)",
-    "--color-overlay": "light-dark(#3E481D80, #3E481DCC)",
-    "--color-overlay-hover": "light-dark(#3E481D0D, #C0CBA90D)",
-    "--color-overlay-pressed": "light-dark(#3E481D1A, #C0CBA91A)",
-    "--color-background-muted": "light-dark(#F0F0E0, #3E481D)",
-    "--color-text-primary": "light-dark(#3E481D, #C0CBA9)",
-    "--color-text-secondary": "light-dark(#707E46, #94a468)",
-    "--color-text-disabled": "light-dark(#C0CBA9, #5a6440)",
-    "--color-text-accent": "light-dark(#3E481D, #C0CBA9)",
+    "--color-syntax-added-marker": "light-dark(#374c36, #d0e9ce)",
+    "--color-syntax-removed-marker": "light-dark(#58413e, #f9dcd7)",
+    "--color-accent": "light-dark(#006982, #84d4ef)",
+    "--color-accent-muted": "light-dark(#00698214, #84d4ef20)",
+    "--color-neutral": "light-dark(#1928300f, #e8f3f91a)",
+    "--color-background-surface": "light-dark(#ffffff, #131d23)",
+    "--color-background-body": "light-dark(#e6f3fb, #0a1216)",
+    "--color-overlay": "light-dark(#111d2480, #000000cc)",
+    "--color-overlay-hover": "light-dark(#1928300d, #e8f3f90d)",
+    "--color-overlay-pressed": "light-dark(#1928301a, #e8f3f91a)",
+    "--color-background-muted": "light-dark(#d5e5ef, #1b282e)",
+    "--color-text-primary": "light-dark(#192830, #e8f3f9)",
+    "--color-text-secondary": "light-dark(#4c626e, #9cafb9)",
+    "--color-text-disabled": "light-dark(#b6cad6, #4f616c)",
+    "--color-text-accent": "light-dark(#006982, #84d4ef)",
     "--color-on-dark": "#FFFFFF",
-    "--color-on-light": "#3E481D",
-    "--color-on-accent": "light-dark(#FFFFFF, #3E481D)",
-    "--color-on-success": "light-dark(#FFFFFF, #3E481D)",
-    "--color-on-error": "light-dark(#FFFFFF, #3E481D)",
-    "--color-on-warning": "light-dark(#3E481D, #3E481D)",
-    "--color-icon-accent": "light-dark(#3E481D, #C0CBA9)",
-    "--color-icon-primary": "light-dark(#3E481D, #C0CBA9)",
-    "--color-icon-secondary": "light-dark(#707E46, #94a468)",
-    "--color-icon-disabled": "light-dark(#C0CBA9, #5a6440)",
-    "--color-background-card": "light-dark(#FFFFFF, #1e2016)",
-    "--color-background-popover": "light-dark(#FFFFFF, #3E481D)",
-    "--color-background-inverted": "light-dark(#3E481D, #C0CBA9)",
-    "--color-success": "light-dark(#4D9900, #6dbf2a)",
-    "--color-success-muted": "light-dark(#4D990020, #6dbf2a20)",
-    "--color-error": "light-dark(#FD0000, #ff5c5c)",
-    "--color-error-muted": "light-dark(#FD000020, #ff5c5c20)",
-    "--color-warning": "light-dark(#FFB600, #ffc940)",
-    "--color-warning-muted": "light-dark(#FFB60020, #ffc94020)",
-    "--color-border": "light-dark(#DCE3CE, #C0CBA91A)",
-    "--color-border-emphasized": "light-dark(#B7C29E, #5a6440)",
-    "--color-skeleton": "light-dark(#C0CBA9, #5a6440)",
-    "--color-shadow": "light-dark(#3E481D1A, #0000004D)",
+    "--color-on-light": "#192830",
+    "--color-on-accent": "light-dark(#ffffff, #0a1216)",
+    "--color-on-success": "light-dark(#404e00, #dde9c1)",
+    "--color-on-error": "light-dark(#58413e, #f9dcd7)",
+    "--color-on-warning": "light-dark(#7d2300, #ffd9c9)",
+    "--color-icon-accent": "light-dark(#006982, #84d4ef)",
+    "--color-icon-primary": "light-dark(#192830, #e8f3f9)",
+    "--color-icon-secondary": "light-dark(#647b88, #80949f)",
+    "--color-icon-disabled": "light-dark(#b6cad6, #4f616c)",
+    "--color-background-card": "light-dark(#ffffff, #131d23)",
+    "--color-background-popover": "light-dark(#ffffff, #1b282e)",
+    "--color-background-inverted": "light-dark(#192830, #e8f3f9)",
+    "--color-success": "light-dark(#404e00, #bfcf96)",
+    "--color-success-muted": "light-dark(#dceabb, #bfcf96)",
+    "--color-error": "light-dark(#58413e, #dcc0bc)",
+    "--color-error-muted": "light-dark(#f9dcd7, #dcc0bc)",
+    "--color-warning": "light-dark(#7d2300, #ffb18f)",
+    "--color-warning-muted": "light-dark(#ffd9c9, #ffb18f)",
+    "--color-border": "light-dark(#d5e5ef, #e8f3f91a)",
+    "--color-border-emphasized": "light-dark(#7d95a2, #4f616c)",
+    "--color-skeleton": "light-dark(#c5d8e2, #394953)",
+    "--color-shadow": "light-dark(#1928301a, #0000004d)",
     "--color-tint-hover": "light-dark(black, white)",
-    "--color-background-blue": "light-dark(#3a5e8c33, #3a5e8c33)",
-    "--color-border-blue": "light-dark(#3a5e8c, #7ba8d4)",
-    "--color-icon-blue": "light-dark(#3a5e8c, #7ba8d4)",
-    "--color-text-blue": "light-dark(#2e4a6e, #8dbce0)",
-    "--color-background-cyan": "light-dark(#3a7c7c33, #3a7c7c33)",
-    "--color-border-cyan": "light-dark(#3a7c7c, #70c4c4)",
-    "--color-icon-cyan": "light-dark(#3a7c7c, #70c4c4)",
-    "--color-text-cyan": "light-dark(#2e6060, #82d4d4)",
-    "--color-background-gray": "light-dark(#707E4633, #5a644033)",
-    "--color-border-gray": "light-dark(#707E46, #707E46)",
-    "--color-icon-gray": "light-dark(#707E46, #94a468)",
-    "--color-text-gray": "light-dark(#3E481D, #C0CBA9)",
-    "--color-background-green": "light-dark(#4D990033, #6dbf2a33)",
-    "--color-border-green": "light-dark(#4D9900, #6dbf2a)",
-    "--color-icon-green": "light-dark(#4D9900, #6dbf2a)",
-    "--color-text-green": "light-dark(#3d7a00, #80d43a)",
-    "--color-background-orange": "light-dark(#c4762033, #d4903a33)",
-    "--color-border-orange": "light-dark(#c47620, #d4903a)",
-    "--color-icon-orange": "light-dark(#c47620, #d4903a)",
-    "--color-text-orange": "light-dark(#a06018, #e0a04a)",
-    "--color-background-pink": "light-dark(#c44a7033, #e07a9a33)",
-    "--color-border-pink": "light-dark(#c44a70, #e07a9a)",
-    "--color-icon-pink": "light-dark(#c44a70, #e07a9a)",
-    "--color-text-pink": "light-dark(#a03a5a, #f08aaa)",
-    "--color-background-purple": "light-dark(#6b4a8c33, #b08ed433)",
-    "--color-border-purple": "light-dark(#6b4a8c, #b08ed4)",
-    "--color-icon-purple": "light-dark(#6b4a8c, #b08ed4)",
-    "--color-text-purple": "light-dark(#553a70, #c0a0e0)",
-    "--color-background-red": "light-dark(#FD000033, #ff5c5c33)",
-    "--color-border-red": "light-dark(#FD0000, #ff5c5c)",
-    "--color-icon-red": "light-dark(#FD0000, #ff5c5c)",
-    "--color-text-red": "light-dark(#cc0000, #ff7a7a)",
-    "--color-background-teal": "light-dark(#2e6b5a33, #5ab89833)",
-    "--color-border-teal": "light-dark(#2e6b5a, #5ab898)",
-    "--color-icon-teal": "light-dark(#2e6b5a, #5ab898)",
-    "--color-text-teal": "light-dark(#245546, #6ccaaa)",
-    "--color-background-yellow": "light-dark(#FFB60033, #ffc94033)",
-    "--color-border-yellow": "light-dark(#FFB600, #ffc940)",
-    "--color-icon-yellow": "light-dark(#FFB600, #ffc940)",
-    "--color-text-yellow": "light-dark(#cc9200, #ffd960)",
-    "--spacing-0-5": "0.1875rem",
-    "--spacing-1": "0.375rem",
-    "--spacing-1-5": "0.5625rem",
-    "--spacing-2": "0.75rem",
-    "--spacing-3": "1.125rem",
-    "--spacing-4": "1.5rem",
-    "--spacing-5": "1.875rem",
-    "--spacing-6": "2.25rem",
-    "--spacing-7": "2.625rem",
-    "--spacing-8": "3rem",
-    "--spacing-9": "3.375rem",
-    "--spacing-10": "3.75rem",
-    "--spacing-11": "4.125rem",
-    "--spacing-12": "4.5rem",
-    "--radius-inner": "6px",
-    "--radius-element": "12px",
-    "--radius-container": "18px",
-    "--radius-page": "42px",
-    "--size-element-sm": "36px",
-    "--size-element-md": "40px",
-    "--size-element-lg": "44px",
-    "--shadow-low": "0 2px 4px #3E481D0D, 0 4px 8px #3E481D1A",
-    "--shadow-med": "0 2px 4px #3E481D0D, 0 4px 12px #3E481D1A",
-    "--shadow-high": "0 4px 6px #3E481D1A, 0 12px 24px #3E481D26",
-    "--shadow-inset-hover": "inset 0px 0px 0px 2px #3E481D30",
-    "--shadow-inset-selected": "inset 0px 0px 0px 2px #3E481D50",
-    "--shadow-inset-success": "inset 0px 0px 0px 2px #4D990050",
-    "--shadow-inset-warning": "inset 0px 0px 0px 2px #FFB60050",
-    "--shadow-inset-error": "inset 0px 0px 0px 2px #FD000050"
+    "--color-background-blue": "light-dark(#b8ecff, #004f63)",
+    "--color-border-blue": "light-dark(#8ee3ff, #004354)",
+    "--color-icon-blue": "light-dark(#004f63, #b8ecff)",
+    "--color-text-blue": "light-dark(#004f63, #b8ecff)",
+    "--color-background-cyan": "light-dark(#dcf6ff, #004354)",
+    "--color-border-cyan": "light-dark(#b8ecff, #003746)",
+    "--color-icon-cyan": "light-dark(#004f63, #b8ecff)",
+    "--color-text-cyan": "light-dark(#004f63, #b8ecff)",
+    "--color-background-gray": "light-dark(#d5e5ef, #2e3e47)",
+    "--color-border-gray": "light-dark(#c5d8e2, #25333a)",
+    "--color-icon-gray": "light-dark(#364a55, #d7e5ed)",
+    "--color-text-gray": "light-dark(#364a55, #d7e5ed)",
+    "--color-background-green": "light-dark(#dceabb, #404e00)",
+    "--color-border-green": "light-dark(#cddda4, #354200)",
+    "--color-icon-green": "light-dark(#404e00, #dde9c1)",
+    "--color-text-green": "light-dark(#404e00, #dde9c1)",
+    "--color-background-orange": "light-dark(#ffd9c9, #7b2705)",
+    "--color-border-orange": "light-dark(#ffc6ad, #6b1c00)",
+    "--color-icon-orange": "light-dark(#7d2300, #ffd9c9)",
+    "--color-text-orange": "light-dark(#7d2300, #ffd9c9)",
+    "--color-background-pink": "light-dark(#f0dde8, #5e4e57)",
+    "--color-border-pink": "light-dark(#e2cfda, #463740)",
+    "--color-icon-pink": "light-dark(#52424c, #f0dde8)",
+    "--color-text-pink": "light-dark(#52424c, #f0dde8)",
+    "--color-background-purple": "light-dark(#e8dff3, #564f60)",
+    "--color-border-purple": "light-dark(#d9d1e5, #3f3949)",
+    "--color-icon-purple": "light-dark(#4b4454, #e8dff3)",
+    "--color-text-purple": "light-dark(#4b4454, #e8dff3)",
+    "--color-background-red": "light-dark(#f9dcd7, #644d49)",
+    "--color-border-red": "light-dark(#ebcec9, #4c3633)",
+    "--color-icon-red": "light-dark(#58413e, #f9dcd7)",
+    "--color-text-red": "light-dark(#58413e, #f9dcd7)",
+    "--color-background-teal": "light-dark(#d4e7dc, #46564d)",
+    "--color-border-teal": "light-dark(#c6d9ce, #303f36)",
+    "--color-icon-teal": "light-dark(#3b4a41, #d4e7dc)",
+    "--color-text-teal": "light-dark(#3b4a41, #d4e7dc)",
+    "--color-background-yellow": "light-dark(#f4e1b7, #5e512d)",
+    "--color-border-yellow": "light-dark(#e5d3a9, #463a18)",
+    "--color-icon-yellow": "light-dark(#524622, #f4e1b7)",
+    "--color-text-yellow": "light-dark(#524622, #f4e1b7)",
+    "--radius-none": "0px",
+    "--radius-inner": "0.25rem",
+    "--radius-element": "0.5rem",
+    "--radius-container": "0.75rem",
+    "--radius-page": "1.5rem",
+    "--radius-full": "9999px",
+    "--shadow-low": "0 2px 4px #28282A0D, 0 4px 8px #28282A1A",
+    "--shadow-med": "0 2px 4px #28282A0D, 0 4px 12px #28282A1A",
+    "--shadow-high": "0 4px 6px #28282A1A, 0 12px 24px #28282A26",
+    "--shadow-inset-hover": "inset 0px 0px 0px 2px #28282A30",
+    "--shadow-inset-selected": "inset 0px 0px 0px 2px #28282A50",
+    "--shadow-inset-success": "inset 0px 0px 0px 2px #83838a30",
+    "--shadow-inset-warning": "inset 0px 0px 0px 2px #83838a30",
+    "--shadow-inset-error": "inset 0px 0px 0px 2px #83838a30"
   },
   components: {
     "heading": {
@@ -310,11 +295,238 @@ export const yadvTheme = {
     "button": {
       "base": {
         "borderRadius": "var(--radius-full)"
+      },
+      "variant:secondary": {
+        "backgroundColor": "transparent",
+        "borderWidth": "1.5px",
+        "borderStyle": "solid",
+        "borderColor": "var(--color-border-emphasized)",
+        ":hover": {
+          "backgroundColor": "var(--color-neutral)"
+        }
+      },
+      "variant:destructive": {
+        "backgroundColor": "var(--color-background-red)",
+        "color": "var(--color-text-red)"
+      }
+    },
+    "badge": {
+      "variant:info": {
+        "backgroundColor": "var(--color-background-blue)",
+        "color": "var(--color-text-blue)"
+      },
+      "variant:neutral": {
+        "backgroundColor": "var(--color-background-gray)",
+        "color": "var(--color-text-gray)"
+      },
+      "variant:success": {
+        "backgroundColor": "var(--color-background-green)",
+        "color": "var(--color-text-green)"
+      },
+      "variant:warning": {
+        "backgroundColor": "var(--color-background-yellow)",
+        "color": "var(--color-text-yellow)"
+      },
+      "variant:error": {
+        "backgroundColor": "var(--color-background-red)",
+        "color": "var(--color-text-red)"
+      }
+    },
+    "banner": {
+      "status:info": {
+        "--color-accent-muted": "var(--color-background-blue)",
+        "--color-text-primary": "var(--color-text-blue)",
+        "--color-text-secondary": "var(--color-text-blue)",
+        "--color-accent": "var(--color-text-blue)"
+      },
+      "status:success": {
+        "--color-success-muted": "var(--color-background-green)",
+        "--color-text-primary": "var(--color-text-green)",
+        "--color-text-secondary": "var(--color-text-green)",
+        "--color-success": "var(--color-text-green)"
+      },
+      "status:warning": {
+        "--color-warning-muted": "var(--color-background-yellow)",
+        "--color-text-primary": "var(--color-text-yellow)",
+        "--color-text-secondary": "var(--color-text-yellow)",
+        "--color-warning": "var(--color-text-yellow)"
+      },
+      "status:error": {
+        "--color-error-muted": "var(--color-background-red)",
+        "--color-text-primary": "var(--color-text-red)",
+        "--color-text-secondary": "var(--color-text-red)",
+        "--color-error": "var(--color-text-red)"
+      }
+    },
+    "progress-bar-fill": {
+      "variant:accent": {
+        "backgroundColor": "light-dark(#d7e4f5, #a0acbc)"
+      },
+      "variant:success": {
+        "backgroundColor": "light-dark(#d0e9ce, #9ab298)"
+      },
+      "variant:warning": {
+        "backgroundColor": "light-dark(#f4e1b7, #bbaa82)"
+      },
+      "variant:error": {
+        "backgroundColor": "light-dark(#f9dcd7, #c0a5a0)"
+      }
+    },
+    "progress-bar-track": {
+      "base": {
+        "backgroundColor": "var(--color-skeleton)"
+      }
+    },
+    "switch": {
+      "base": {
+        "--color-background-gray": "var(--color-skeleton)"
+      }
+    },
+    "field-status": {
+      "type:success": {
+        "backgroundColor": "var(--color-background-green)"
+      },
+      "type:warning": {
+        "backgroundColor": "var(--color-background-yellow)"
+      },
+      "type:error": {
+        "backgroundColor": "var(--color-background-red)"
+      }
+    },
+    "text-input": {
+      "status:success": {
+        "--color-success": "light-dark(#7f977e, #99b298)"
+      },
+      "status:warning": {
+        "--color-warning": "light-dark(#9f8f68, #bbaa81)"
+      },
+      "status:error": {
+        "--color-error": "light-dark(#a58b86, #c0a5a1)"
+      }
+    },
+    "text-area": {
+      "status:success": {
+        "--color-success": "light-dark(#7f977e, #99b298)"
+      },
+      "status:warning": {
+        "--color-warning": "light-dark(#9f8f68, #bbaa81)"
+      },
+      "status:error": {
+        "--color-error": "light-dark(#a58b86, #c0a5a1)"
+      }
+    },
+    "number-input": {
+      "status:success": {
+        "--color-success": "light-dark(#7f977e, #99b298)"
+      },
+      "status:warning": {
+        "--color-warning": "light-dark(#9f8f68, #bbaa81)"
+      },
+      "status:error": {
+        "--color-error": "light-dark(#a58b86, #c0a5a1)"
+      }
+    },
+    "date-input": {
+      "status:success": {
+        "--color-success": "light-dark(#7f977e, #99b298)"
+      },
+      "status:warning": {
+        "--color-warning": "light-dark(#9f8f68, #bbaa81)"
+      },
+      "status:error": {
+        "--color-error": "light-dark(#a58b86, #c0a5a1)"
+      }
+    },
+    "time-input": {
+      "status:success": {
+        "--color-success": "light-dark(#7f977e, #99b298)"
+      },
+      "status:warning": {
+        "--color-warning": "light-dark(#9f8f68, #bbaa81)"
+      },
+      "status:error": {
+        "--color-error": "light-dark(#a58b86, #c0a5a1)"
+      }
+    },
+    "selector": {
+      "status:success": {
+        "--color-success": "light-dark(#7f977e, #99b298)"
+      },
+      "status:warning": {
+        "--color-warning": "light-dark(#9f8f68, #bbaa81)"
+      },
+      "status:error": {
+        "--color-error": "light-dark(#a58b86, #c0a5a1)"
+      },
+      "variant:secondary": {
+        ":not(.astryx-input-group *)": {
+          "backgroundColor": "transparent",
+          "borderWidth": "1.5px",
+          "borderStyle": "solid",
+          "borderColor": "var(--color-border-emphasized)"
+        },
+        ":hover:not([data-disabled], [data-readonly], .astryx-input-group *)": {
+          "backgroundColor": "var(--color-neutral)"
+        }
+      }
+    },
+    "multi-selector": {
+      "status:success": {
+        "--color-success": "light-dark(#7f977e, #99b298)"
+      },
+      "status:warning": {
+        "--color-warning": "light-dark(#9f8f68, #bbaa81)"
+      },
+      "status:error": {
+        "--color-error": "light-dark(#a58b86, #c0a5a1)"
+      },
+      "variant:secondary": {
+        ":not(.astryx-input-group *)": {
+          "backgroundColor": "transparent",
+          "borderWidth": "1.5px",
+          "borderStyle": "solid",
+          "borderColor": "var(--color-border-emphasized)"
+        },
+        ":hover:not([data-disabled], [data-readonly], .astryx-input-group *)": {
+          "backgroundColor": "var(--color-neutral)"
+        }
+      }
+    },
+    "complex-selector": {
+      "variant:secondary": {
+        "backgroundColor": "transparent",
+        "borderWidth": "1.5px",
+        "borderStyle": "solid",
+        "borderColor": "var(--color-border-emphasized)",
+        ":hover:not(:has(> :disabled))": {
+          "backgroundColor": "var(--color-neutral)"
+        }
+      }
+    },
+    "typeahead": {
+      "status:success": {
+        "--color-success": "light-dark(#7f977e, #99b298)"
+      },
+      "status:warning": {
+        "--color-warning": "light-dark(#9f8f68, #bbaa81)"
+      },
+      "status:error": {
+        "--color-error": "light-dark(#a58b86, #c0a5a1)"
+      }
+    },
+    "tokenizer": {
+      "status:success": {
+        "--color-success": "light-dark(#7f977e, #99b298)"
+      },
+      "status:warning": {
+        "--color-warning": "light-dark(#9f8f68, #bbaa81)"
+      },
+      "status:error": {
+        "--color-error": "light-dark(#a58b86, #c0a5a1)"
       }
     },
     "card": {
       "base": {
-        "borderRadius": "var(--radius-page)",
         "padding": "var(--spacing-3)"
       }
     },
@@ -348,7 +560,24 @@ export const yadvTheme = {
       "xl": 1280,
       "2xl": 1536
     },
-    "rules": []
+    "rules": [
+      {
+        "when": {
+          "pointer": "coarse",
+          "width": {
+            "below": "lg"
+          }
+        },
+        "value": {
+          "typography": {
+            "scale": {
+              "base": 16,
+              "ratio": 1.2225
+            }
+          }
+        }
+      }
+    ]
   },
   __axes: {
     "typography": {

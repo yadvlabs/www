@@ -4,7 +4,7 @@ Source for [labs.yadv.in](https://labs.yadv.in), the home of yadv labs' experime
 and projects. The main site is [yadv.in](https://yadv.in).
 
 Built with [Astryx](https://astryx.atmeta.com) (React 19 + StyleX design system)
-and Vite, using Astryx's Matcha theme with the Stone theme's fonts.
+and Vite, on Astryx's Stone theme with a custom colour palette.
 
 ## Develop
 
@@ -23,12 +23,23 @@ showcased project, and `stealthProjects` are the placeholders. Images are in
 
 ## Theme
 
-`src/themes/yadv/yadvTheme.ts` extends Astryx's built-in **Matcha** theme and
-swaps in the **Stone** theme's typefaces: Montserrat for headings, Figtree for
-body text and JetBrains Mono for code. `fonts.css` loads them. After editing the
-theme, or after upgrading Astryx, rebuild it:
+`src/themes/yadv/yadvTheme.ts` extends Astryx's **Stone** theme, keeping its
+fonts (Montserrat headings, Figtree body, JetBrains Mono code), and recolours
+it with colours taken from a Himachal valley photo:
+
+| Family  | Seed      | Used for                               |
+| ------- | --------- | -------------------------------------- |
+| ridge   | `#5d7481` | blue-grey text, borders and surfaces   |
+| glacier | `#158cab` | accent (buttons, links)                |
+| meadow  | `#94af23` | success, green tags                    |
+| ember   | `#df8963` | warnings, orange tags                  |
+
+The seeds are in `palette.config.json`. After changing them or the theme
+source, or after upgrading Astryx, regenerate the palette and rebuild:
 
 ```sh
+npx astryx theme palette generate src/themes/yadv/palette.config.json \
+  --out src/themes/yadv/yadv.palette.ts --overwrite
 npx astryx theme build src/themes/yadv/yadvTheme.ts
 ```
 

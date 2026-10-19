@@ -13,7 +13,7 @@ import {Icon} from '@astryxdesign/core/Icon';
 import {Divider} from '@astryxdesign/core/Divider';
 import {yadvTheme} from './themes/yadv/yadv';
 import './themes/yadv/yadv.css';
-import './themes/yadv/fonts.css';
+import '@astryxdesign/theme-stone/fonts.css';
 import {Logo} from './components/Logo';
 import {featured, stealthProjects} from './projects';
 import type {Project, StealthProject} from './projects';
