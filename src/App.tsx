@@ -19,6 +19,7 @@ import {featured, stealthProjects} from './projects';
 import type {Project, StealthProject} from './projects';
 
 const GITHUB_ORG = 'https://github.com/yadvlabs';
+const PARENT_SITE = 'https://yadv.in';
 
 // There is no Image primitive that fills an AspectRatio box, so the images
 // carry the one bit of inline style (same approach as the Astryx gallery
@@ -50,8 +51,11 @@ export default function App() {
                 </Heading>
                 <VStack gap={3} hAlign="start">
                   <Text type="large" color="secondary" textWrap="pretty">
-                    Open source tools and side projects by Rohit Yadav, plus a
-                    few things that are still under wraps.
+                    Open source tools and side projects by{' '}
+                    <Link href={PARENT_SITE} size="lg" weight="semibold">
+                      Rohit Yadav
+                    </Link>
+                    , plus a few things that are still under wraps.
                   </Text>
                 </VStack>
               </Grid>
@@ -93,9 +97,14 @@ function Header() {
           </Text>
         </HStack>
       </Link>
-      <Link href={GITHUB_ORG} isStandalone color="secondary">
-        GitHub
-      </Link>
+      <HStack gap={4} vAlign="center">
+        <Link href={PARENT_SITE} isStandalone color="secondary">
+          yadv.in
+        </Link>
+        <Link href={GITHUB_ORG} isStandalone color="secondary">
+          GitHub
+        </Link>
+      </HStack>
     </HStack>
   );
 }
@@ -168,7 +177,10 @@ function Footer() {
   return (
     <HStack hAlign="between" vAlign="center" wrap="wrap" gap={3}>
       <Text type="supporting">
-        © {new Date().getFullYear()} yadv labs · yadv.in
+        © {new Date().getFullYear()} yadv labs · labs.yadv.in · part of{' '}
+        <Link href={PARENT_SITE} size="sm" color="inherit" hasUnderline>
+          yadv.in
+        </Link>
       </Text>
       <Link href={GITHUB_ORG} isStandalone color="secondary">
         github.com/yadvlabs

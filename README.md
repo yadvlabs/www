@@ -1,6 +1,7 @@
 # yadv labs
 
-Source for [yadv.in](https://yadv.in), the home of yadv labs' experiments and projects.
+Source for [labs.yadv.in](https://labs.yadv.in), the home of yadv labs' experiments
+and projects. The main site is [yadv.in](https://yadv.in).
 
 Built with [Astryx](https://astryx.atmeta.com) (React 19 + StyleX design system)
 and Vite, using Astryx's Matcha theme with the Stone theme's fonts.
@@ -35,4 +36,4 @@ The Astryx packages are pinned to the same version, so upgrade them together.
 
 ## Deploy
 
-Deployed with Cloudflare. Build command: `npm run build`, output directory: `dist`.
+Deployed to https://labs.yadv.in with Cloudflare. Build command: `npm run build`, output directory: `dist`.
