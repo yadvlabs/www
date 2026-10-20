@@ -3,7 +3,10 @@ export type Project = {
   summary: string;
   highlights: string[];
   tags: string[];
-  license: string;
+  /** Omitted until the repository declares one. */
+  license?: string;
+  /** Shown next to the name; defaults to "Open source". */
+  status?: {label: string; variant: 'green' | 'blue'};
   href: string;
   image: string;
   imageAlt: string;
@@ -59,6 +62,21 @@ export const hacklabTopics = [
 ];
 
 export const projects: Project[] = [
+  {
+    name: 'armsense',
+    summary:
+      'A rebuild of pfSense, the FreeBSD-based open source firewall and router, for arm64.',
+    highlights: [
+      'pfSense firewall and routing on 64-bit Arm (AArch64) hardware',
+      'Built on FreeBSD, like pfSense itself',
+    ],
+    tags: ['pfSense', 'FreeBSD', 'arm64'],
+    status: {label: 'In development', variant: 'blue'},
+    href: 'https://github.com/yadvlabs/armsense',
+    image: '/images/armsense.svg',
+    imageAlt:
+      'A firewall appliance with an arm64 chip, routing traffic between network ports',
+  },
   {
     name: 'cmakeqt',
     summary:

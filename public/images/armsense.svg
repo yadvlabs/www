@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="A firewall appliance with an arm64 chip, routing traffic between network ports">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e2e2e8"/>
+      <stop offset="1" stop-color="#d7d7da"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#25252a" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <circle cx="110" cy="90" r="140" fill="#f3f3f5" opacity="0.6"/>
+  <circle cx="720" cy="560" r="120" fill="#ababb0" opacity="0.2"/>
+
+  <!-- arm64 chip -->
+  <g transform="translate(330 96)" filter="url(#shadow)">
+    <g stroke="#83838a" stroke-width="5" stroke-linecap="round">
+      <path d="M30 0v-14M60 0v-14M90 0v-14M110 0v-14"/>
+      <path d="M30 140v14M60 140v14M90 140v14M110 140v14"/>
+      <path d="M0 30h-14M0 60h-14M0 90h-14M0 110h-14"/>
+      <path d="M140 30h14M140 60h14M140 90h14M140 110h14"/>
+    </g>
+    <rect width="140" height="140" rx="16" fill="#25252a"/>
+    <rect x="14" y="14" width="112" height="112" rx="10" fill="none" stroke="#3b3b3f" stroke-width="2"/>
+    <text x="70" y="80" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="26" font-weight="700" fill="#f3f3f5">arm64</text>
+  </g>
+  <path d="M400 264v40" stroke="#83838a" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 12"/>
+
+  <!-- Firewall appliance -->
+  <g transform="translate(150 316)" filter="url(#shadow)">
+    <rect width="500" height="120" rx="18" fill="#25252a"/>
+    <rect x="0" y="0" width="500" height="18" rx="9" fill="#3b3b3f"/>
+    <!-- shield -->
+    <path d="M60 40l30 10v22c0 18-13 30-30 36-17-6-30-18-30-36V50z" fill="#b4cdb2"/>
+    <path d="M47 74l9 9 18-20" fill="none" stroke="#25252a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- ports -->
+    <g fill="#1b1b1f" stroke="#83838a" stroke-width="2">
+      <rect x="150" y="50" width="54" height="44" rx="4"/>
+      <rect x="230" y="50" width="54" height="44" rx="4"/>
+      <rect x="310" y="50" width="54" height="44" rx="4"/>
+      <rect x="390" y="50" width="54" height="44" rx="4"/>
+    </g>
+    <g fill="#83838a">
+      <rect x="165" y="84" width="24" height="10"/>
+      <rect x="245" y="84" width="24" height="10"/>
+      <rect x="325" y="84" width="24" height="10"/>
+      <rect x="405" y="84" width="24" height="10"/>
+    </g>
+    <!-- link lights -->
+    <circle cx="160" cy="40" r="5" fill="#6dbf2a"/>
+    <circle cx="240" cy="40" r="5" fill="#6dbf2a"/>
+    <circle cx="320" cy="40" r="5" fill="#d7c59c"/>
+    <circle cx="400" cy="40" r="5" fill="#6dbf2a"/>
+    <g font-family="DM Sans, Figtree, system-ui, sans-serif" font-size="13" font-weight="600" fill="#ababb0" text-anchor="middle">
+      <text x="177" y="112">WAN</text>
+      <text x="257" y="112">LAN</text>
+      <text x="337" y="112">OPT1</text>
+      <text x="417" y="112">OPT2</text>
+    </g>
+  </g>
+
+  <!-- traffic -->
+  <g fill="none" stroke="#25252a" stroke-width="4" stroke-linecap="round">
+    <path d="M327 436c0 40-40 50-120 60"/>
+    <path d="M407 436c0 40 40 50 180 60"/>
+  </g>
+  <path d="M215 486l-12 10 14 6" fill="none" stroke="#25252a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M577 486l12 10-14 6" fill="none" stroke="#25252a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="400" y="556" text-anchor="middle" font-family="DM Sans, Figtree, system-ui, sans-serif" font-size="20" font-weight="600" fill="#25252a">pfSense · FreeBSD · arm64</text>
+</svg>

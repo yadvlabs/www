@@ -131,7 +131,10 @@ function ProjectCard({project}: {project: Project}) {
           <VStack gap={2}>
             <HStack gap={2} vAlign="center" wrap="wrap">
               <Heading level={2}>{project.name}</Heading>
-              <Badge variant="green" label="Open source" />
+              <Badge
+                variant={project.status?.variant ?? 'green'}
+                label={project.status?.label ?? 'Open source'}
+              />
             </HStack>
             <Text type="body" color="secondary" textWrap="pretty">
               {project.summary}
@@ -149,7 +152,9 @@ function ProjectCard({project}: {project: Project}) {
             {project.tags.map(tag => (
               <Badge key={tag} variant="neutral" label={tag} />
             ))}
-            <Badge variant="neutral" label={project.license} />
+            {project.license && (
+              <Badge variant="neutral" label={project.license} />
+            )}
           </HStack>
           <HStack gap={3} wrap="wrap">
             <Button
