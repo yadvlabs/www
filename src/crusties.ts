@@ -1,7 +1,6 @@
 /**
- * The Crustydex: every Crusty variant, carried over from the Reef site
- * (swtch.in/crustydex). Crusty the tortocrab is the yadv labs mascot.
- * Artwork lives in public/crusty/.
+ * The Crustydex: every Crusty variant. Crusty the tortocrab is the yadv labs
+ * mascot. Artwork lives in public/crusty/.
  */
 
 export type CrustyPart = 'shell' | 'claw' | 'leg';

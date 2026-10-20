@@ -22,8 +22,7 @@ Each page is a Vite entry point (`<page>/index.html` → `src/<page>.tsx` →
 
 - `/`: showcased projects, stealth placeholders, and panels leading to Work
   and Old experiments
-- `/reef/`: the Reef project page, adapted from its site at
-  [swtch.in](https://swtch.in/)
+- `/reef/`: the Reef project page
 - `/crustydex/`: every Crusty, the yadv labs mascot; `/crustydex/#<slug>`
   opens one entry
 - `/work/`: projects built at other organisations

@@ -15,15 +15,10 @@ import {Collapsible, CollapsibleGroup} from '@astryxdesign/core/Collapsible';
 import {SiteShell} from '../components/SiteShell';
 import {crustydex} from '../crusties';
 
-/**
- * The Reef project page. Content follows the Reef site at swtch.in (source:
- * scaleninja/crusty), laid out with Astryx components.
- */
+/** The Reef project page, laid out with Astryx components. */
 
-const SITE = 'https://swtch.in';
 const REPO = 'https://github.com/yadvlabs/reef';
 const BETA = 'mailto:contact@scaleninja.com?subject=Reef%20beta';
-const DEMO = 'https://calendar.app.google/poN23LmhzVkFc1XX9';
 
 const art: CSSProperties = {
   display: 'block',
@@ -184,7 +179,7 @@ const security = [
 const faq = [
   {
     q: 'Is Reef ready to use?',
-    a: 'Reef is in beta. Git hosting, pull requests, issues, Projects and Actions work today. The GitHub compatibility page on swtch.in lists exactly what is still coming.',
+    a: 'Reef is in beta. Git hosting, pull requests, issues, Projects and Actions work today.',
   },
   {
     q: 'Do we have to leave GitHub?',
@@ -236,14 +231,8 @@ export default function Reef() {
           <HStack gap={3} wrap="wrap">
             <Button label="Join the beta" variant="primary" href={BETA} />
             <Button
-              label="Book a demo"
-              href={DEMO}
-              endContent={<Icon icon="externalLink" />}
-            />
-            <Button
-              label="swtch.in"
-              variant="ghost"
-              href={SITE}
+              label="View on GitHub"
+              href={REPO}
               endContent={<Icon icon="externalLink" />}
             />
           </HStack>
