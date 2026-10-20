@@ -404,7 +404,6 @@ export const workOrgs: WorkOrg[] = [
   {
     name: 'ShapeBlue',
     years: '2014–2026',
-    href: 'https://www.shapeblue.com/',
     projects: [
       {
         name: 'hackerbook',
@@ -425,7 +424,6 @@ export const workOrgs: WorkOrg[] = [
   {
     name: 'Wingify',
     years: '2013–2014',
-    href: 'https://wingify.com/',
     projects: [
       {
         name: 'agentredrabbit',
