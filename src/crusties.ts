@@ -1,5 +1,5 @@
 /**
- * The Crustydex: every Crusty variant. Crusty the tortocrab is the yadv labs
+ * The Crustydex: every Crusty variant. Crusty the tortocrab is the YADV Labs
  * mascot. Artwork lives in public/crusty/.
  */
 

@@ -486,7 +486,7 @@ export default function Reef() {
       </Card>
 
       <Text type="supporting">
-        Reef is built by yadv labs. GitHub is a trademark of GitHub, Inc. Reef
+        Reef is built by YADV Labs. GitHub is a trademark of GitHub, Inc. Reef
         is not affiliated with or endorsed by GitHub.
       </Text>
     </SiteShell>

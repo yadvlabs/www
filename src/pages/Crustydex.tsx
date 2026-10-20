@@ -72,7 +72,7 @@ export default function Crustydex() {
         <VStack gap={3}>
           <Heading level={1}>Crustydex</Heading>
           <Text type="large" color="secondary" textWrap="pretty">
-            Crusty the tortocrab is the yadv labs mascot: steady as a tortoise,
+            Crusty the tortocrab is the YADV Labs mascot: steady as a tortoise,
             quick as a crab. These are all the Crustys that have hatched so
             far. Each one takes after a part of the original: its steady shell,
             its quick claws or its busy legs.

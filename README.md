@@ -1,6 +1,6 @@
-# yadv labs
+# YADV Labs
 
-Source for [labs.yadv.in](https://labs.yadv.in), the home of yadv labs' experiments
+Source for [labs.yadv.in](https://labs.yadv.in), the home of YADV Labs' experiments
 and projects. The main site is [yadv.in](https://yadv.in).
 
 Built with [Astryx](https://astryx.atmeta.com) (React 19 + StyleX design system)
@@ -23,7 +23,7 @@ Each page is a Vite entry point (`<page>/index.html` → `src/<page>.tsx` →
 - `/`: showcased projects, stealth placeholders, and panels leading to Work
   and Old experiments
 - `/reef/`: the Reef project page
-- `/crustydex/`: every Crusty, the yadv labs mascot; `/crustydex/#<slug>`
+- `/crustydex/`: every Crusty, the YADV Labs mascot; `/crustydex/#<slug>`
   opens one entry
 - `/work/`: projects built at other organisations
 - `/old/`: open source contributions, old experiments from

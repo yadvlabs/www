@@ -36,7 +36,7 @@ export default function Home() {
     <SiteShell page="home">
       <Grid columns={{minWidth: 280, max: 2}} gap={4} align="end">
         <Heading level={1} textWrap="balance">
-          Projects and experiments from yadv labs
+          Projects and experiments from YADV Labs
         </Heading>
         <VStack gap={3} hAlign="start">
           <Text type="large" color="secondary" textWrap="pretty">

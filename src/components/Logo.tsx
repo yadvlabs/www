@@ -3,7 +3,7 @@ type LogoProps = {
   title?: string;
 };
 
-/** The yadv labs mark (same artwork as public/favicon.svg), drawn in currentColor. */
+/** The YADV Labs mark (same artwork as public/favicon.svg), drawn in currentColor. */
 export function Logo({size = 32, title}: LogoProps) {
   return (
     <svg

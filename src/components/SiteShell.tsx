@@ -44,11 +44,11 @@ export function SiteShell({page, children}: {page: Page; children: ReactNode}) {
 function Header({page}: {page: Page}) {
   return (
     <HStack hAlign="between" vAlign="center" gap={3} wrap="wrap">
-      <Link href="/" color="primary" label="yadv labs home">
+      <Link href="/" color="primary" label="YADV Labs home">
         <HStack gap={2} vAlign="center">
           <Logo size={32} />
           <Text type="large" weight="bold" color="inherit">
-            yadv labs
+            YADV Labs
           </Text>
         </HStack>
       </Link>
@@ -88,7 +88,7 @@ function Footer() {
         <Link href={GITHUB_ORG} isStandalone color="secondary">
           github.com/yadvlabs
         </Link>
-        <Link href="/crustydex/" label="Crusty, the yadv labs mascot">
+        <Link href="/crustydex/" label="Crusty, the YADV Labs mascot">
           <img
             src="/crusty/peekaboo.svg"
             alt=""
