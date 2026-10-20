@@ -386,18 +386,19 @@ export const workOrgs: WorkOrg[] = [
         href: 'https://github.com/apache/cloudstack-cloudmonkey',
       },
       {
+        name: 'CloudStack Terraform Provider',
+        summary:
+          'A Terraform provider for managing CloudStack resources as code.',
+        tech: 'Go',
+        href: 'https://github.com/apache/cloudstack-terraform-provider',
+      },
+      {
         name: 'Primate',
         summary:
           'A modern, role-based UI for CloudStack. It was merged into CloudStack in 2021 and is now its web UI.',
         tech: 'Vue.js',
         status: 'Archived',
         href: 'https://github.com/apache/cloudstack-primate',
-      },
-      {
-        name: 'cloudstack-www',
-        summary: 'The Apache CloudStack website, cloudstack.apache.org.',
-        tech: 'Docusaurus',
-        href: 'https://github.com/apache/cloudstack-www',
       },
     ],
   },
@@ -417,7 +418,7 @@ export const workOrgs: WorkOrg[] = [
         summary:
           'MonkeyBox: build, run and test local CloudStack development and QA environments.',
         tech: 'Bash',
-        href: 'https://github.com/shapeblue/mbx',
+        href: 'https://github.com/cloudstack/mbx',
       },
     ],
   },
