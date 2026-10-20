@@ -10,7 +10,12 @@ import {Logo} from './Logo';
 export const GITHUB_ORG = 'https://github.com/yadvlabs';
 export const PARENT_SITE = 'https://yadv.in';
 
-type Page = 'home' | 'work' | 'old';
+type Page = 'home' | 'work' | 'old' | 'reef' | 'crustydex';
+
+const NAV: ReadonlyArray<{page: Page; label: string; href: string}> = [
+  {page: 'home', label: 'Projects', href: '/'},
+  {page: 'crustydex', label: 'Crustydex', href: '/crustydex/'},
+];
 
 /** Theme, page frame, header and footer shared by every page. */
 export function SiteShell({page, children}: {page: Page; children: ReactNode}) {
@@ -48,14 +53,17 @@ function Header({page}: {page: Page}) {
         </HStack>
       </Link>
       <HStack gap={4} vAlign="center" wrap="wrap" as="nav">
-        <Link
-          href="/"
-          isStandalone
-          color={page === 'home' ? 'primary' : 'secondary'}
-          weight={page === 'home' ? 'semibold' : undefined}
-          aria-current={page === 'home' ? 'page' : undefined}>
-          Projects
-        </Link>
+        {NAV.map(item => (
+          <Link
+            key={item.page}
+            href={item.href}
+            isStandalone
+            color={item.page === page ? 'primary' : 'secondary'}
+            weight={item.page === page ? 'semibold' : undefined}
+            aria-current={item.page === page ? 'page' : undefined}>
+            {item.label}
+          </Link>
+        ))}
         <Link href={PARENT_SITE} isStandalone color="secondary">
           yadv.in
         </Link>
@@ -76,9 +84,20 @@ function Footer() {
           yadv.in
         </Link>
       </Text>
-      <Link href={GITHUB_ORG} isStandalone color="secondary">
-        github.com/yadvlabs
-      </Link>
+      <HStack gap={4} vAlign="center">
+        <Link href={GITHUB_ORG} isStandalone color="secondary">
+          github.com/yadvlabs
+        </Link>
+        <Link href="/crustydex/" label="Crusty, the yadv labs mascot">
+          <img
+            src="/crusty/peekaboo.svg"
+            alt=""
+            width={40}
+            height={40}
+            loading="lazy"
+          />
+        </Link>
+      </HStack>
     </HStack>
   );
 }

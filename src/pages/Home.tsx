@@ -167,7 +167,11 @@ function ProjectCard({project}: {project: Project}) {
               <Button
                 label={project.website.label}
                 href={project.website.href}
-                endContent={<Icon icon="externalLink" />}
+                endContent={
+                  project.website.href.startsWith('http') ? (
+                    <Icon icon="externalLink" />
+                  ) : undefined
+                }
               />
             )}
           </HStack>

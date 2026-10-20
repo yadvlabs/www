@@ -17,19 +17,23 @@ npm run preview   # serve the production build
 
 ## Pages and projects
 
-The site has three pages, each a Vite entry point:
+Each page is a Vite entry point (`<page>/index.html` → `src/<page>.tsx` →
+`src/pages/`):
 
-- `/` (`index.html` → `src/pages/Home.tsx`): showcased projects, stealth
-  placeholders, and panels leading to the other two pages
-- `/work/` (`work/index.html` → `src/pages/Work.tsx`): projects built at
-  other organisations
-- `/old/` (`old/index.html` → `src/pages/Old.tsx`): open source
-  contributions, old experiments from
+- `/`: showcased projects, stealth placeholders, and panels leading to Work
+  and Old experiments
+- `/reef/`: the Reef project page, adapted from its site at
+  [swtch.in](https://swtch.in/)
+- `/crustydex/`: every Crusty, the yadv labs mascot; `/crustydex/#<slug>`
+  opens one entry
+- `/work/`: projects built at other organisations
+- `/old/`: open source contributions, old experiments from
   [yadvlabs/old](https://github.com/yadvlabs/old), and hacklab
 
-All three share the header, footer and theme in `src/components/SiteShell.tsx`.
-All content lives in [`src/projects.ts`](src/projects.ts). Images are in
-`public/images/`.
+All pages share the header, footer and theme in `src/components/SiteShell.tsx`.
+Project content lives in [`src/projects.ts`](src/projects.ts), Crustydex
+entries in [`src/crusties.ts`](src/crusties.ts). Images are in
+`public/images/`, Crusty artwork in `public/crusty/`.
 
 ## Theme
 

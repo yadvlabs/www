@@ -93,7 +93,7 @@ export const projects: Project[] = [
     tags: ['Rust', 'Git', 'Self-hosted'],
     status: {label: 'Beta', variant: 'blue'},
     href: 'https://github.com/yadvlabs/reef',
-    website: {label: 'Website', href: 'https://swtch.in/'},
+    website: {label: 'Learn more', href: '/reef/'},
     image: '/images/reef.svg',
     imageAlt: 'Crusty the tortocrab, the Reef mascot',
   },
