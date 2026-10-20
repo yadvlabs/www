@@ -67,5 +67,5 @@
   <path d="M215 486l-12 10 14 6" fill="none" stroke="#25252a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M577 486l12 10-14 6" fill="none" stroke="#25252a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <text x="400" y="556" text-anchor="middle" font-family="DM Sans, Figtree, system-ui, sans-serif" font-size="20" font-weight="600" fill="#25252a">pfSense · FreeBSD · arm64</text>
+  <text x="400" y="556" text-anchor="middle" font-family="DM Sans, Figtree, system-ui, sans-serif" font-size="20" font-weight="600" fill="#25252a">armsense · FreeBSD · arm64</text>
 </svg>

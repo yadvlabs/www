@@ -163,6 +163,13 @@ function ProjectCard({project}: {project: Project}) {
               href={project.href}
               endContent={<Icon icon="externalLink" />}
             />
+            {project.website && (
+              <Button
+                label={project.website.label}
+                href={project.website.href}
+                endContent={<Icon icon="externalLink" />}
+              />
+            )}
           </HStack>
         </VStack>
       </Grid>

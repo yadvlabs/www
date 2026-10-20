@@ -8,6 +8,8 @@ export type Project = {
   /** Shown next to the name; defaults to "Open source". */
   status?: {label: string; variant: 'green' | 'blue'};
   href: string;
+  /** A second link shown beside "View on GitHub". */
+  website?: {label: string; href: string};
   image: string;
   imageAlt: string;
 };
@@ -65,17 +67,53 @@ export const projects: Project[] = [
   {
     name: 'armsense',
     summary:
-      'A rebuild of pfSense, the FreeBSD-based open source firewall and router, for arm64.',
+      'A firewall and router distribution for arm64, built on FreeBSD and based on the open source pfSense code.',
     highlights: [
-      'pfSense firewall and routing on 64-bit Arm (AArch64) hardware',
-      'Built on FreeBSD, like pfSense itself',
+      'Firewall and routing on 64-bit Arm (AArch64) hardware',
+      'Built on FreeBSD and based on open source pfSense',
     ],
-    tags: ['pfSense', 'FreeBSD', 'arm64'],
+    tags: ['FreeBSD', 'arm64', 'Firewall'],
     status: {label: 'In development', variant: 'blue'},
     href: 'https://github.com/yadvlabs/armsense',
     image: '/images/armsense.svg',
     imageAlt:
       'A firewall appliance with an arm64 chip, routing traffic between network ports',
+  },
+  {
+    name: 'reef',
+    summary:
+      "Self-hosted Git that works with your GitHub tools. Reef speaks GitHub's REST and GraphQL APIs, so gh, Octokit, Terraform and Actions workflows can point at your own host.",
+    highlights: [
+      'GitHub-compatible REST and GraphQL APIs, webhooks and personal access tokens',
+      'Pull requests, issues, Actions, Projects, wikis and releases in a familiar UI',
+      'Actions workflows run on the standard actions/runner',
+      'Pull and push mirrors with GitHub, to keep working through outages',
+      'A single Rust binary, with SQLite for small installs or PostgreSQL to scale',
+    ],
+    tags: ['Rust', 'Git', 'Self-hosted'],
+    status: {label: 'Beta', variant: 'blue'},
+    href: 'https://github.com/yadvlabs/reef',
+    website: {label: 'Website', href: 'https://swtch.in/'},
+    image: '/images/reef.svg',
+    imageAlt: 'Crusty the tortocrab, the Reef mascot',
+  },
+  {
+    name: 'dsync',
+    summary:
+      'DriveSync: a small, fast command-line tool that keeps a local folder and a Google Drive folder in sync.',
+    highlights: [
+      'Shows the plan and asks before changing anything, and never deletes by default',
+      'Cheap repeat runs, using the Drive Changes API and a local SQLite hash cache',
+      "Every transfer is checked against Drive's MD5, with parallel, resumable uploads",
+      'JSON output and stable error codes, so scripts and GUIs can drive it',
+    ],
+    tags: ['Rust', 'Google Drive', 'CLI'],
+    license: 'MIT',
+    href: 'https://github.com/yadvlabs/dsync',
+    website: {label: 'Mac app', href: 'https://scaleninja.com/drivesync/'},
+    image: '/images/dsync.svg',
+    imageAlt:
+      'A local folder and a Google Drive folder kept in sync by dsync push and pull',
   },
   {
     name: 'cmakeqt',
