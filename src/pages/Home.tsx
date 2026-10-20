@@ -1,4 +1,4 @@
-import type {CSSProperties} from 'react';
+import type {CSSProperties, ReactNode} from 'react';
 import {VStack, HStack} from '@astryxdesign/core/Layout';
 import {Grid} from '@astryxdesign/core/Grid';
 import {AspectRatio} from '@astryxdesign/core/AspectRatio';
@@ -10,7 +10,12 @@ import {Button} from '@astryxdesign/core/Button';
 import {Link} from '@astryxdesign/core/Link';
 import {Icon} from '@astryxdesign/core/Icon';
 import {SiteShell, PARENT_SITE} from '../components/SiteShell';
-import {projects, stealthProjects, oldProjectCount} from '../projects';
+import {
+  projects,
+  stealthProjects,
+  oldProjectCount,
+  workOrgs,
+} from '../projects';
 import type {Project, StealthProject} from '../projects';
 
 // There is no Image primitive that fills an AspectRatio box, so the images
@@ -36,7 +41,7 @@ export default function Home() {
         <VStack gap={3} hAlign="start">
           <Text type="large" color="secondary" textWrap="pretty">
             Open source tools and side projects by{' '}
-            <Link href={PARENT_SITE} size="lg" weight="semibold">
+            <Link href={PARENT_SITE} size="lg" weight="semibold" hasUnderline>
               Rohit Yadav
             </Link>
             , plus a few things that are still under wraps.
@@ -62,21 +67,58 @@ export default function Home() {
         </Grid>
       </VStack>
 
-      <Card variant="muted" padding={6}>
-        <HStack hAlign="between" vAlign="center" gap={4} wrap="wrap">
-          <VStack gap={1}>
-            <Heading level={2}>Old experiments</Heading>
-            <Text type="body" color="secondary" textWrap="pretty">
-              {oldProjectCount} earlier projects from 2008 to 2013, plus
-              contributions to VLMC, VLC for Android and Haiku.
-            </Text>
-          </VStack>
-          <Link href="/old/" isStandalone weight="semibold">
-            Browse old experiments →
-          </Link>
-        </HStack>
-      </Card>
+      <VStack gap={4}>
+        <PagePanel
+          title="Work"
+          href="/work/"
+          linkLabel="Browse work →">
+          {workProjectCount} products and open source projects built at
+          ScaleNinja, Kubernetes, the Apache Software Foundation, ShapeBlue and
+          Wingify.
+        </PagePanel>
+        <PagePanel
+          title="Old experiments"
+          href="/old/"
+          linkLabel="Browse old experiments →">
+          {oldProjectCount} earlier projects from 2008 to 2013, plus
+          contributions to VLMC, VLC for Android and Haiku.
+        </PagePanel>
+      </VStack>
     </SiteShell>
+  );
+}
+
+const workProjectCount = workOrgs.reduce(
+  (count, org) => count + org.projects.length,
+  0,
+);
+
+/** A panel at the foot of the page that leads to one of the other pages. */
+function PagePanel({
+  title,
+  href,
+  linkLabel,
+  children,
+}: {
+  title: string;
+  href: string;
+  linkLabel: string;
+  children: ReactNode;
+}) {
+  return (
+    <Card variant="muted" padding={6}>
+      <HStack hAlign="between" vAlign="center" gap={4} wrap="wrap">
+        <VStack gap={1}>
+          <Heading level={2}>{title}</Heading>
+          <Text type="body" color="secondary" textWrap="pretty">
+            {children}
+          </Text>
+        </VStack>
+        <Link href={href} isStandalone weight="semibold">
+          {linkLabel}
+        </Link>
+      </HStack>
+    </Card>
   );
 }
 

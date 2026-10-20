@@ -1,63 +1,63 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="cmakeqt: a CMakeLists file building into Linux, macOS and Windows packages">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#deeefa"/>
-      <stop offset="1" stop-color="#b6cad6"/>
+      <stop offset="0" stop-color="#e2e2e8"/>
+      <stop offset="1" stop-color="#d7d7da"/>
     </linearGradient>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
-      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#22333c" flood-opacity="0.22"/>
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#25252a" flood-opacity="0.22"/>
     </filter>
   </defs>
   <rect width="800" height="600" fill="url(#bg)"/>
-  <circle cx="690" cy="90" r="140" fill="#f2f8fc" opacity="0.5"/>
-  <circle cx="90" cy="540" r="110" fill="#2791ad" opacity="0.15"/>
+  <circle cx="690" cy="90" r="140" fill="#f3f3f5" opacity="0.5"/>
+  <circle cx="90" cy="540" r="110" fill="#83838a" opacity="0.15"/>
 
   <g transform="translate(400 300) scale(0.82) translate(-400 -300)">
   <!-- Editor window -->
   <g filter="url(#shadow)">
-    <rect x="70" y="90" width="430" height="360" rx="18" fill="#111d24"/>
-    <rect x="70" y="90" width="430" height="44" rx="18" fill="#22333c"/>
-    <rect x="70" y="116" width="430" height="18" fill="#22333c"/>
+    <rect x="70" y="90" width="430" height="360" rx="18" fill="#1b1b1f"/>
+    <rect x="70" y="90" width="430" height="44" rx="18" fill="#25252a"/>
+    <rect x="70" y="116" width="430" height="18" fill="#25252a"/>
     <circle cx="100" cy="112" r="7" fill="#ff7a6b"/>
     <circle cx="124" cy="112" r="7" fill="#ffc940"/>
     <circle cx="148" cy="112" r="7" fill="#6dbf2a"/>
-    <text x="285" y="118" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" fill="#81b2ca">CMakeLists.txt</text>
+    <text x="285" y="118" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" fill="#ababb0">CMakeLists.txt</text>
     <g font-family="JetBrains Mono, ui-monospace, monospace" font-size="17">
-      <text x="98" y="178" fill="#b6cad6"><tspan fill="#a1c43a">project</tspan>(myapp CXX)</text>
-      <text x="98" y="210" fill="#b6cad6"><tspan fill="#a1c43a">find_package</tspan>(Qt6 REQUIRED</text>
-      <text x="98" y="236" fill="#b6cad6">  COMPONENTS Widgets)</text>
-      <text x="98" y="268" fill="#b6cad6"><tspan fill="#a1c43a">qt_add_executable</tspan>(myapp</text>
-      <text x="98" y="294" fill="#b6cad6">  ${SOURCES})</text>
-      <text x="98" y="326" fill="#b6cad6"><tspan fill="#a1c43a">qt_add_translations</tspan>(myapp</text>
-      <text x="98" y="352" fill="#b6cad6">  TS_FILES ${TS})</text>
-      <text x="98" y="384" fill="#b6cad6"><tspan fill="#a1c43a">include</tspan>(CPack)</text>
-      <rect x="98" y="402" width="11" height="20" fill="#b6cad6" opacity="0.8"/>
+      <text x="98" y="178" fill="#d7d7da"><tspan fill="#b4cdb2">project</tspan>(myapp CXX)</text>
+      <text x="98" y="210" fill="#d7d7da"><tspan fill="#b4cdb2">find_package</tspan>(Qt6 REQUIRED</text>
+      <text x="98" y="236" fill="#d7d7da">  COMPONENTS Widgets)</text>
+      <text x="98" y="268" fill="#d7d7da"><tspan fill="#b4cdb2">qt_add_executable</tspan>(myapp</text>
+      <text x="98" y="294" fill="#d7d7da">  ${SOURCES})</text>
+      <text x="98" y="326" fill="#d7d7da"><tspan fill="#b4cdb2">qt_add_translations</tspan>(myapp</text>
+      <text x="98" y="352" fill="#d7d7da">  TS_FILES ${TS})</text>
+      <text x="98" y="384" fill="#d7d7da"><tspan fill="#b4cdb2">include</tspan>(CPack)</text>
+      <rect x="98" y="402" width="11" height="20" fill="#d7d7da" opacity="0.8"/>
     </g>
   </g>
 
   <!-- Arrow -->
-  <path d="M520 270 C 560 270, 560 270, 590 270" stroke="#22333c" stroke-width="5" fill="none" stroke-linecap="round"/>
-  <path d="M582 258 L596 270 L582 282" stroke="#22333c" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M520 270 C 560 270, 560 270, 590 270" stroke="#25252a" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M582 258 L596 270 L582 282" stroke="#25252a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
   <!-- Packages -->
   <g font-family="DM Sans, system-ui, sans-serif" font-weight="700" text-anchor="middle" filter="url(#shadow)">
     <g transform="translate(615 120)">
       <rect width="120" height="84" rx="14" fill="#FFFFFF"/>
-      <text x="60" y="40" font-size="22" fill="#22333c">.deb</text>
-      <text x="60" y="64" font-size="14" font-weight="500" fill="#2791ad">.rpm</text>
+      <text x="60" y="40" font-size="22" fill="#25252a">.deb</text>
+      <text x="60" y="64" font-size="14" font-weight="500" fill="#83838a">.rpm</text>
     </g>
     <g transform="translate(615 228)">
-      <rect width="120" height="84" rx="14" fill="#22333c"/>
-      <text x="60" y="40" font-size="22" fill="#f2f8fc">.dmg</text>
-      <text x="60" y="64" font-size="14" font-weight="500" fill="#b6cad6">.app</text>
+      <rect width="120" height="84" rx="14" fill="#25252a"/>
+      <text x="60" y="40" font-size="22" fill="#f3f3f5">.dmg</text>
+      <text x="60" y="64" font-size="14" font-weight="500" fill="#d7d7da">.app</text>
     </g>
     <g transform="translate(615 336)">
       <rect width="120" height="84" rx="14" fill="#FFFFFF"/>
-      <text x="60" y="40" font-size="22" fill="#22333c">.exe</text>
-      <text x="60" y="64" font-size="14" font-weight="500" fill="#2791ad">NSIS</text>
+      <text x="60" y="40" font-size="22" fill="#25252a">.exe</text>
+      <text x="60" y="64" font-size="14" font-weight="500" fill="#83838a">NSIS</text>
     </g>
   </g>
 
-  <text x="70" y="520" font-family="DM Sans, system-ui, sans-serif" font-size="20" font-weight="600" fill="#22333c">C++ · Qt · CMake → Linux · macOS · Windows</text>
+  <text x="70" y="520" font-family="DM Sans, system-ui, sans-serif" font-size="20" font-weight="600" fill="#25252a">C++ · Qt · CMake → Linux · macOS · Windows</text>
   </g>
 </svg>

@@ -214,7 +214,7 @@ export const oldProjectGroups: OldProjectGroup[] = [
     ],
   },
   {
-    title: 'Libraries, tooling and VLC',
+    title: 'Libraries and tooling',
     projects: [
       {
         name: 'libishare',
@@ -245,34 +245,6 @@ export const oldProjectGroups: OldProjectGroup[] = [
         summary: 'A dark skin for VLC.',
         tech: 'VLC skin',
         path: 'dark-pepper.vlt',
-      },
-    ],
-  },
-  {
-    title: 'Infrastructure and messaging',
-    projects: [
-      {
-        name: 'agentredrabbit',
-        summary:
-          'A multithreaded agent that moves data from Redis to RabbitMQ, with a failsafe queue, graceful shutdown and recovery.',
-        tech: 'Python',
-        years: '2013',
-        path: 'agentredrabbit',
-      },
-      {
-        name: 'lua-resty-rabbitmqstomp',
-        summary:
-          "A RabbitMQ client for OpenResty that speaks STOMP 1.2 over nginx's cosocket API.",
-        tech: 'Lua',
-        years: '2013',
-        path: 'lua-resty-rabbitmqstomp',
-      },
-      {
-        name: 'RabbitMQ Munin plug-ins',
-        summary:
-          'Munin plug-ins that graph RabbitMQ connections, consumers, queues and memory.',
-        tech: 'Shell',
-        path: 'rabbitmqmunin',
       },
       {
         name: 'VMController',
@@ -319,3 +291,169 @@ export const oldProjectCount = oldProjectGroups.reduce(
   (count, group) => count + group.projects.length,
   0,
 );
+
+export type WorkProject = {
+  name: string;
+  summary: string;
+  tech: string;
+  href: string;
+  /** Shown as a tag, e.g. "Beta" or "Archived". */
+  status?: string;
+  links?: ReadonlyArray<{label: string; href: string}>;
+};
+
+export type WorkOrg = {
+  name: string;
+  years: string;
+  href?: string;
+  projects: WorkProject[];
+};
+
+/** Projects built and maintained at other organisations, newest first. */
+export const workOrgs: WorkOrg[] = [
+  {
+    name: 'ScaleNinja',
+    years: '2026–present',
+    href: 'https://scaleninja.com/',
+    projects: [
+      {
+        name: 'MacVisor',
+        summary:
+          'Run macOS and Linux virtual machines on a Mac, with Windows 11 and AI sandboxes in tech preview.',
+        tech: 'macOS',
+        status: 'Beta',
+        href: 'https://scaleninja.com/macvisor/',
+      },
+      {
+        name: 'DeltaSnap',
+        summary:
+          'An APFS snapshot manager for Mac: list, label, diff and restore snapshots on any volume.',
+        tech: 'macOS',
+        href: 'https://scaleninja.com/deltasnap/',
+      },
+      {
+        name: 'Noject',
+        summary: 'Keeps external drives mounted on a Mac.',
+        tech: 'macOS',
+        href: 'https://scaleninja.com/noject/',
+      },
+      {
+        name: 'DriveSync',
+        summary: 'Syncs a folder with Google Drive, one reviewed change at a time.',
+        tech: 'macOS',
+        href: 'https://scaleninja.com/drivesync/',
+      },
+      {
+        name: 'DeltaSync',
+        summary: 'Compares and syncs folders on a Mac.',
+        tech: 'macOS',
+        status: 'Free',
+        href: 'https://scaleninja.com/deltasync/',
+      },
+    ],
+  },
+  {
+    name: 'Kubernetes',
+    years: '2022–present',
+    href: 'https://kubernetes.io/',
+    projects: [
+      {
+        name: 'CloudStack Cluster API Provider',
+        summary:
+          'A Kubernetes Cluster API provider for Apache CloudStack, for creating and managing Kubernetes clusters on CloudStack.',
+        tech: 'Go',
+        href: 'https://github.com/kubernetes-sigs/cluster-api-provider-cloudstack',
+      },
+    ],
+  },
+  {
+    name: 'Apache Software Foundation',
+    years: '2012–present',
+    href: 'https://www.apache.org/',
+    projects: [
+      {
+        name: 'CloudStack',
+        summary:
+          'An open source platform for building and running infrastructure-as-a-service clouds.',
+        tech: 'Java',
+        href: 'https://github.com/apache/cloudstack/graphs/contributors?all=1',
+      },
+      {
+        name: 'CloudMonkey',
+        summary:
+          "CloudStack's command-line client, cmk: an interactive shell and scriptable CLI, written in Go.",
+        tech: 'Go',
+        href: 'https://github.com/apache/cloudstack-cloudmonkey',
+      },
+      {
+        name: 'Primate',
+        summary:
+          'A modern, role-based UI for CloudStack. It was merged into CloudStack in 2021 and is now its web UI.',
+        tech: 'Vue.js',
+        status: 'Archived',
+        href: 'https://github.com/apache/cloudstack-primate',
+      },
+      {
+        name: 'cloudstack-www',
+        summary: 'The Apache CloudStack website, cloudstack.apache.org.',
+        tech: 'Docusaurus',
+        href: 'https://github.com/apache/cloudstack-www',
+      },
+    ],
+  },
+  {
+    name: 'ShapeBlue',
+    years: '2014–2026',
+    href: 'https://www.shapeblue.com/',
+    projects: [
+      {
+        name: 'hackerbook',
+        summary:
+          "The hacker's guide to CloudStack development: a hands-on course for new contributors.",
+        tech: 'Course',
+        href: 'https://github.com/shapeblue/hackerbook',
+      },
+      {
+        name: 'mbx',
+        summary:
+          'MonkeyBox: build, run and test local CloudStack development and QA environments.',
+        tech: 'Bash',
+        href: 'https://github.com/shapeblue/mbx',
+      },
+    ],
+  },
+  {
+    name: 'Wingify',
+    years: '2013–2014',
+    href: 'https://wingify.com/',
+    projects: [
+      {
+        name: 'agentredrabbit',
+        summary:
+          'A multithreaded agent that moves data from Redis to RabbitMQ, with a failsafe queue, graceful shutdown and recovery.',
+        tech: 'Python',
+        href: 'https://github.com/wingify/agentredrabbit',
+        links: [
+          {
+            label: 'Blog: Scaling with queues',
+            href: 'https://engineering.wingify.com/posts/scaling-with-queues/',
+          },
+        ],
+      },
+      {
+        name: 'lua-resty-rabbitmqstomp',
+        summary:
+          "A RabbitMQ client for OpenResty that speaks STOMP 1.2 over nginx's cosocket API.",
+        tech: 'Lua',
+        href: 'https://github.com/wingify/lua-resty-rabbitmqstomp',
+      },
+      {
+        name: 'rabbitmq-munin',
+        summary:
+          'Munin plug-ins that graph RabbitMQ connections, consumers, queues and memory.',
+        tech: 'Shell',
+        href: 'https://github.com/wingify/rabbitmq-munin',
+      },
+    ],
+  },
+];

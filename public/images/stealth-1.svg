@@ -2,16 +2,16 @@
   <defs>
     <filter id="blur"><feGaussianBlur stdDeviation="28"/></filter>
     <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="0.8" fill="#22333c" opacity="0.12"/>
+      <circle cx="1" cy="1" r="0.8" fill="#25252a" opacity="0.12"/>
     </pattern>
   </defs>
-  <rect width="800" height="600" fill="#f2f8fc"/>
+  <rect width="800" height="600" fill="#f3f3f5"/>
   <g filter="url(#blur)">
-    <circle cx="250" cy="230" r="170" fill="#b6cad6"/>
-    <circle cx="520" cy="360" r="200" fill="#94af23" opacity="0.75"/>
-    <circle cx="640" cy="160" r="110" fill="#df8963" opacity="0.7"/>
+    <circle cx="250" cy="230" r="170" fill="#d7d7da"/>
+    <circle cx="520" cy="360" r="200" fill="#b4cdb2" opacity="0.75"/>
+    <circle cx="640" cy="160" r="110" fill="#d7c59c" opacity="0.7"/>
   </g>
-  <g fill="none" stroke="#22333c" stroke-opacity="0.35" stroke-width="2">
+  <g fill="none" stroke="#25252a" stroke-opacity="0.35" stroke-width="2">
     <circle cx="400" cy="300" r="90"/>
     <circle cx="400" cy="300" r="150"/>
     <circle cx="400" cy="300" r="210"/>

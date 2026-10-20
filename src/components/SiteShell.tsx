@@ -4,20 +4,18 @@ import {VStack, HStack, Layout, LayoutContent} from '@astryxdesign/core/Layout';
 import {Text} from '@astryxdesign/core/Text';
 import {Link} from '@astryxdesign/core/Link';
 import {Divider} from '@astryxdesign/core/Divider';
-import {yadvTheme} from '../themes/yadv/yadv';
-import '../themes/yadv/yadv.css';
-import '@astryxdesign/theme-stone/fonts.css';
+import {themes, defaultThemeSlug} from '../astryx-themes';
 import {Logo} from './Logo';
 
 export const GITHUB_ORG = 'https://github.com/yadvlabs';
 export const PARENT_SITE = 'https://yadv.in';
 
-type Page = 'home' | 'old';
+type Page = 'home' | 'work' | 'old';
 
 /** Theme, page frame, header and footer shared by every page. */
 export function SiteShell({page, children}: {page: Page; children: ReactNode}) {
   return (
-    <Theme theme={yadvTheme}>
+    <Theme theme={themes[defaultThemeSlug]}>
       <Layout
         height="fill"
         contentWidth={1200}
