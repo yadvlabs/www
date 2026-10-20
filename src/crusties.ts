@@ -37,7 +37,7 @@ export const crustyParts: ReadonlyArray<{
   {
     part: 'leg',
     label: 'Leg',
-    about: 'Glue. The Go services underneath, like GateKeeper single sign-on.',
+    about: 'Glue. The services underneath that keep everything moving.',
   },
 ];
 

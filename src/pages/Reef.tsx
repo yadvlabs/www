@@ -18,7 +18,6 @@ import {crustydex} from '../crusties';
 /** The Reef project page, laid out with Astryx components. */
 
 const REPO = 'https://github.com/yadvlabs/reef';
-const BETA = 'mailto:contact@scaleninja.com?subject=Reef%20beta';
 
 const art: CSSProperties = {
   display: 'block',
@@ -131,8 +130,8 @@ const crustyParts = [
   {
     part: 'Legs',
     badge: 'blue',
-    title: 'Go underneath',
-    text: 'GateKeeper, the optional single sign-on service, is written in Go. It gives your team one login with passkeys and two-factor authentication, and one sign-out ends it everywhere.',
+    title: 'Runs anywhere',
+    text: 'One native binary with the web interface built in, on any cloud or on your own servers, from a small VM to many hosts.',
   },
 ] as const;
 
@@ -141,13 +140,7 @@ site_url = "https://your-domain"
 data_dir = "/var/lib/reef"
 
 [database]
-url = "postgres://reef@db.internal/reef"
-
-# Optional single sign-on: GateKeeper or any OpenID Connect provider.
-# Leave it out to use built-in accounts.
-[gatekeeper]
-issuer    = "https://sso.your-domain"
-client_id = "reef"`;
+url = "postgres://reef@db.internal/reef"`;
 
 const start = `reef migrate
 reef serve
@@ -168,7 +161,7 @@ const deployments = [
 ];
 
 const security = [
-  {title: 'Your sign-in', text: 'Built-in accounts with securely hashed passwords, or single sign-on through GateKeeper or any OpenID Connect provider. Personal access tokens are stored only as hashes.'},
+  {title: 'Your sign-in', text: 'Built-in accounts with securely hashed passwords, or single sign-on through any OpenID Connect provider. Personal access tokens are stored only as hashes.'},
   {title: 'Protected branches', text: 'Branch protection is enforced on the server, at the moment someone pushes.'},
   {title: 'Signed commits', text: 'GPG and SSH signatures are verified against each person’s registered keys.'},
   {title: 'Sealed secrets', text: 'Actions secrets are sealed when they are uploaded and encrypted at rest.'},
@@ -199,11 +192,7 @@ const faq = [
   },
   {
     q: 'How do people sign in?',
-    a: 'With accounts built into Reef, or through single sign-on: GateKeeper, the companion service that gives your team one login with passkeys and two-factor authentication, or any OpenID Connect provider you already run, such as Okta, Microsoft Entra ID or Keycloak.',
-  },
-  {
-    q: 'Do we need GateKeeper?',
-    a: 'No. Reef manages accounts on its own: people sign up or are added by an admin, sign in with a password, and use personal access tokens and SSH keys for git and the API. Add GateKeeper later for passkeys and two-factor authentication, or connect another OpenID Connect provider for single sign-on.',
+    a: 'With accounts built into Reef, or through single sign-on with an OpenID Connect provider you already run, such as Okta, Microsoft Entra ID or Keycloak.',
   },
 ];
 
@@ -229,9 +218,9 @@ export default function Reef() {
             Change the host, keep everything else.
           </Text>
           <HStack gap={3} wrap="wrap">
-            <Button label="Join the beta" variant="primary" href={BETA} />
             <Button
               label="View on GitHub"
+              variant="primary"
               href={REPO}
               endContent={<Icon icon="externalLink" />}
             />
@@ -387,7 +376,7 @@ export default function Reef() {
           <Text type="body" color="secondary" textWrap="pretty">
             Reef runs on your hardware, behind your firewall. It has its own
             accounts built in, so it works on its own. For single sign-on,
-            connect GateKeeper or any OpenID Connect provider you already run.
+            connect any OpenID Connect provider you already run.
             Your code, CI logs and secrets stay on your machines.
           </Text>
         </VStack>
@@ -456,11 +445,7 @@ export default function Reef() {
           ))}
         </CollapsibleGroup>
         <Text type="body" color="secondary">
-          Something else? Email{' '}
-          <Link href="mailto:contact@scaleninja.com" hasUnderline>
-            contact@scaleninja.com
-          </Link>
-          , or follow the code on{' '}
+          Something else? Follow the code on{' '}
           <Link href={REPO} hasUnderline>
             GitHub
           </Link>
@@ -501,7 +486,7 @@ export default function Reef() {
       </Card>
 
       <Text type="supporting">
-        Reef is built by ScaleNinja. GitHub is a trademark of GitHub, Inc. Reef
+        Reef is built by yadv labs. GitHub is a trademark of GitHub, Inc. Reef
         is not affiliated with or endorsed by GitHub.
       </Text>
     </SiteShell>
