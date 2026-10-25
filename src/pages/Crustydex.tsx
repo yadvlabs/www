@@ -70,7 +70,9 @@ export default function Crustydex() {
     <SiteShell page="crustydex">
       <Grid columns={{minWidth: 280, max: 2}} gap={6} align="center">
         <VStack gap={3}>
-          <Heading level={1}>Crustydex</Heading>
+          <Heading level={1} type="display-2">
+            Crustydex
+          </Heading>
           <Text type="large" color="secondary" textWrap="pretty">
             Crusty the tortocrab is the YADV Labs mascot: steady as a tortoise,
             quick as a crab. These are all the Crustys that have hatched so

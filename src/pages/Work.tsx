@@ -13,7 +13,7 @@ export default function Work() {
   return (
     <SiteShell page="work">
       <Grid columns={{minWidth: 280, max: 2}} gap={4} align="end">
-        <Heading level={1} textWrap="balance">
+        <Heading level={1} type="display-2" textWrap="balance">
           Work
         </Heading>
         <Text type="large" color="secondary" textWrap="pretty">

@@ -23,7 +23,7 @@ export default function Old() {
   return (
     <SiteShell page="old">
       <Grid columns={{minWidth: 280, max: 2}} gap={4} align="end">
-        <Heading level={1} textWrap="balance">
+        <Heading level={1} type="display-2" textWrap="balance">
           Old experiments
         </Heading>
         <VStack gap={3} hAlign="start">

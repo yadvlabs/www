@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="cmakeqt: a CMakeLists file building into Linux, macOS and Windows packages">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#e2e2e8"/>
-      <stop offset="1" stop-color="#d7d7da"/>
+      <stop offset="0" stop-color="#fff7e2"/>
+      <stop offset="1" stop-color="#fde3a6"/>
     </linearGradient>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
       <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#25252a" flood-opacity="0.22"/>
     </filter>
   </defs>
   <rect width="800" height="600" fill="url(#bg)"/>
-  <circle cx="690" cy="90" r="140" fill="#f3f3f5" opacity="0.5"/>
-  <circle cx="90" cy="540" r="110" fill="#83838a" opacity="0.15"/>
+  <circle cx="690" cy="90" r="140" fill="#fffbf0" opacity="0.5"/>
+  <circle cx="90" cy="540" r="110" fill="#c9a24a" opacity="0.15"/>
 
   <g transform="translate(400 300) scale(0.82) translate(-400 -300)">
   <!-- Editor window -->

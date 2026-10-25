@@ -5,11 +5,11 @@
       <circle cx="1" cy="1" r="0.8" fill="#25252a" opacity="0.12"/>
     </pattern>
   </defs>
-  <rect width="800" height="600" fill="#f3f3f5"/>
+  <rect width="800" height="600" fill="#fbf9f4"/>
   <g filter="url(#blur)">
-    <circle cx="250" cy="230" r="170" fill="#d7d7da"/>
-    <circle cx="520" cy="360" r="200" fill="#b4cdb2" opacity="0.75"/>
-    <circle cx="640" cy="160" r="110" fill="#d7c59c" opacity="0.7"/>
+    <circle cx="250" cy="230" r="170" fill="#b5d8f7"/>
+    <circle cx="520" cy="360" r="200" fill="#a6cc58" opacity="0.75"/>
+    <circle cx="640" cy="160" r="110" fill="#fd927f" opacity="0.7"/>
   </g>
   <g fill="none" stroke="#25252a" stroke-opacity="0.35" stroke-width="2">
     <circle cx="400" cy="300" r="90"/>

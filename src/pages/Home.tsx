@@ -1,4 +1,5 @@
-import type {CSSProperties, ReactNode} from 'react';
+import type {CSSProperties} from 'react';
+import {ArrowDown, ArrowRight} from 'lucide-react';
 import {VStack, HStack} from '@astryxdesign/core/Layout';
 import {Grid} from '@astryxdesign/core/Grid';
 import {AspectRatio} from '@astryxdesign/core/AspectRatio';
@@ -9,7 +10,8 @@ import {Badge} from '@astryxdesign/core/Badge';
 import {Button} from '@astryxdesign/core/Button';
 import {Link} from '@astryxdesign/core/Link';
 import {Icon} from '@astryxdesign/core/Icon';
-import {SiteShell, PARENT_SITE} from '../components/SiteShell';
+import {SiteShell, PARENT_SITE, GITHUB_ORG} from '../components/SiteShell';
+import {GitHubMark} from '../components/GitHubMark';
 import {
   projects,
   stealthProjects,
@@ -31,35 +33,72 @@ const image: CSSProperties = {
 // A project image stretches to the height of the copy beside it.
 const projectImage: CSSProperties = {...image, minHeight: 280};
 
+// Crusty in the hero keeps its whole outline.
+const art: CSSProperties = {...image, objectFit: 'contain'};
+
 export default function Home() {
   return (
     <SiteShell page="home">
-      <Grid columns={{minWidth: 280, max: 2}} gap={4} align="end">
-        <Heading level={1} textWrap="balance">
-          Projects and experiments from YADV Labs
-        </Heading>
-        <VStack gap={3} hAlign="start">
+      <Grid columns={{minWidth: 300, max: 2}} gap={8} align="center">
+        <VStack gap={5} hAlign="start">
+          <Badge variant="yellow" label="Meet Crusty, our tortocrab mascot" />
+          <Heading level={1} type="display-1" textWrap="balance">
+            Steady as a tortoise.{' '}
+            <span className="yadv-gradient-text">Quick as a crab.</span>
+          </Heading>
           <Text type="large" color="secondary" textWrap="pretty">
-            Open source tools and side projects by{' '}
+            YADV Labs is where{' '}
             <Link href={PARENT_SITE} size="lg" weight="semibold" hasUnderline>
               Rohit Yadav
-            </Link>
-            , plus a few things that are still under wraps.
+            </Link>{' '}
+            builds open source tools, infrastructure and side projects, plus a
+            few things that are still under wraps.
           </Text>
+          <HStack gap={3} wrap="wrap">
+            <Button
+              label="Explore projects"
+              variant="primary"
+              size="lg"
+              href="#projects"
+              endContent={<Icon icon={ArrowDown} />}
+            />
+            <Button
+              label="GitHub"
+              size="lg"
+              href={GITHUB_ORG}
+              icon={<Icon icon={GitHubMark} />}
+            />
+          </HStack>
         </VStack>
+        <AspectRatio ratio={1}>
+          <img
+            src="/crusty/crusty-standing.svg"
+            alt="Crusty the tortocrab, the YADV Labs mascot"
+            style={art}
+          />
+        </AspectRatio>
       </Grid>
 
+      <WorkStrip />
+
       <VStack gap={6}>
-        {projects.map(project => (
-          <ProjectCard key={project.name} project={project} />
+        <SectionHeading
+          id="projects"
+          eyebrow="Featured"
+          title="Projects"
+          count={projects.length}
+        />
+        {projects.map((project, i) => (
+          <ProjectCard key={project.name} project={project} index={i + 1} />
         ))}
       </VStack>
 
-      <VStack gap={4}>
-        <HStack gap={2} vAlign="center">
-          <Heading level={2}>Coming soon</Heading>
-          <Badge variant="neutral" label="Stealth" />
-        </HStack>
+      <VStack gap={6}>
+        <SectionHeading
+          eyebrow="Stealth"
+          title="Coming soon"
+          count={stealthProjects.length}
+        />
         <Grid columns={{minWidth: 260, max: 3}} gap={6}>
           {stealthProjects.map(project => (
             <StealthCard key={project.name} project={project} />
@@ -67,24 +106,47 @@ export default function Home() {
         </Grid>
       </VStack>
 
-      <VStack gap={4}>
-        <PagePanel
-          title="Work"
-          href="/work/"
-          linkLabel="Browse work →">
-          {workProjectCount} products and open source projects built at
-          ScaleNinja, Kubernetes, the Apache Software Foundation, ShapeBlue and
-          Wingify.
-        </PagePanel>
-        <PagePanel
-          title="Old experiments"
-          href="/old/"
-          linkLabel="Browse old experiments →">
-          {oldProjectCount} earlier projects from 2008 to 2013, plus
-          contributions to VLMC, VLC for Android and Haiku.
-        </PagePanel>
-      </VStack>
+      <Card variant="muted" padding={6}>
+        <HStack hAlign="between" vAlign="center" gap={4} wrap="wrap">
+          <VStack gap={1}>
+            <Heading level={2}>Old experiments</Heading>
+            <Text type="body" color="secondary" textWrap="pretty">
+              {oldProjectCount} earlier projects from 2008 to 2013, plus
+              contributions to VLMC, VLC for Android and Haiku.
+            </Text>
+          </VStack>
+          <Button
+            label="Browse old experiments"
+            href="/old/"
+            endContent={<Icon icon={ArrowRight} />}
+          />
+        </HStack>
+      </Card>
     </SiteShell>
+  );
+}
+
+/** A slim strip under the hero that leads to the Work page. */
+function WorkStrip() {
+  return (
+    <Card padding={4}>
+      <HStack hAlign="between" vAlign="center" gap={3} wrap="wrap">
+        <HStack gap={3} vAlign="center" wrap="wrap">
+          <Text type="label">Work</Text>
+          <Text type="supporting">
+            {workProjectCount} projects at
+          </Text>
+          <HStack gap={2} wrap="wrap">
+            {workOrgs.map(org => (
+              <Badge key={org.name} variant="neutral" label={org.name} />
+            ))}
+          </HStack>
+        </HStack>
+        <Link href="/work/" isStandalone size="sm" weight="semibold">
+          See work →
+        </Link>
+      </HStack>
+    </Card>
   );
 }
 
@@ -93,44 +155,44 @@ const workProjectCount = workOrgs.reduce(
   0,
 );
 
-/** A panel at the foot of the page that leads to one of the other pages. */
-function PagePanel({
+function SectionHeading({
+  id,
+  eyebrow,
   title,
-  href,
-  linkLabel,
-  children,
+  count,
 }: {
+  id?: string;
+  eyebrow: string;
   title: string;
-  href: string;
-  linkLabel: string;
-  children: ReactNode;
+  count: number;
 }) {
   return (
-    <Card variant="muted" padding={6}>
-      <HStack hAlign="between" vAlign="center" gap={4} wrap="wrap">
-        <VStack gap={1}>
-          <Heading level={2}>{title}</Heading>
-          <Text type="body" color="secondary" textWrap="pretty">
-            {children}
-          </Text>
-        </VStack>
-        <Link href={href} isStandalone weight="semibold">
-          {linkLabel}
-        </Link>
+    <VStack gap={1}>
+      <Text type="label" color="accent">
+        {eyebrow}
+      </Text>
+      <HStack gap={2} vAlign="center">
+        <Heading level={2} id={id}>
+          {title}
+        </Heading>
+        <Badge variant="blue" label={String(count)} />
       </HStack>
-    </Card>
+    </VStack>
   );
 }
 
-function ProjectCard({project}: {project: Project}) {
+function ProjectCard({project, index}: {project: Project; index: number}) {
   return (
     <Card padding={0} elevation="low">
       <Grid columns={{minWidth: 320, max: 2}} gap={0}>
         <img src={project.image} alt={project.imageAlt} style={projectImage} />
         <VStack gap={5} padding={6} vAlign="center">
           <VStack gap={2}>
+            <Text type="label" color="accent" hasTabularNumbers>
+              {String(index).padStart(2, '0')}
+            </Text>
             <HStack gap={2} vAlign="center" wrap="wrap">
-              <Heading level={2}>{project.name}</Heading>
+              <Heading level={3}>{project.name}</Heading>
               <Badge
                 variant={project.status?.variant ?? 'green'}
                 label={project.status?.label ?? 'Open source'}
@@ -192,7 +254,7 @@ function StealthCard({project}: {project: StealthProject}) {
       <VStack gap={1} hAlign="start">
         <HStack gap={2} vAlign="center" wrap="wrap">
           <Heading level={3}>{project.name}</Heading>
-          <Badge variant="neutral" label={project.tag} />
+          <Badge variant="yellow" label={project.tag} />
         </HStack>
         <Text type="body" color="secondary">
           {project.summary}

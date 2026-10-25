@@ -1,7 +1,36 @@
 @import '@astryxdesign/core/reset.css';
 @import '@astryxdesign/core/astryx.css';
 
-/* The theme's CSS and fonts are imported by App.tsx (src/themes/yadv/). */
+/*
+ * The theme (src/themes/yadv/) is imported by SiteShell. Everything below
+ * reads its colours from theme tokens, so it follows light and dark mode.
+ */
+
+/* The page Layout fills the viewport, with a pinned header. */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Warm paper with a soft glow of Crusty's colours behind the top of the page. */
 body {
-  background: var(--color-background-body);
+  background:
+    radial-gradient(48rem 26rem at 88% -6%, var(--yadv-glow-leg), transparent 70%),
+    radial-gradient(40rem 24rem at 8% -4%, var(--yadv-glow-claw), transparent 70%),
+    radial-gradient(36rem 26rem at 50% 108%, var(--yadv-glow-shell), transparent 70%),
+    var(--color-background-body);
+}
+
+/* Claw-to-leg gradient for a highlighted word in a heading. */
+.yadv-gradient-text {
+  background: linear-gradient(
+    100deg,
+    var(--yadv-claw),
+    var(--yadv-leg) 70%,
+    var(--yadv-shell)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

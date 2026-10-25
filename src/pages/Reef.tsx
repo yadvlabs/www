@@ -208,8 +208,9 @@ export default function Reef() {
             <Badge variant="blue" label="Beta" />
             <Badge variant="neutral" label="Self-hosted, GitHub-compatible" />
           </HStack>
-          <Heading level={1} textWrap="balance">
-            Self-hosted Git. Nothing new to learn.
+          <Heading level={1} type="display-2" textWrap="balance">
+            Self-hosted Git.{' '}
+            <span className="yadv-gradient-text">Nothing new to learn.</span>
           </Heading>
           <Text type="large" color="secondary" textWrap="pretty">
             Reef runs on your servers and speaks GitHub's REST and GraphQL
