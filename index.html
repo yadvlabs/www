@@ -10,6 +10,14 @@
       content="YADV Labs: experiments and projects by Rohit Yadav."
     />
     <link rel="canonical" href="https://labs.yadv.in/" />
+    <script>
+      try {
+        var mode = localStorage.getItem('yadv-color-mode');
+        if (mode === 'light' || mode === 'dark') {
+          document.documentElement.dataset.theme = mode;
+        }
+      } catch (e) {}
+    </script>
     <title>YADV Labs</title>
   </head>
   <body>

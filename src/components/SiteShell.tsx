@@ -16,6 +16,8 @@ import {Divider} from '@astryxdesign/core/Divider';
 import {yadvTheme} from '../themes/yadv/yadv';
 import '../themes/yadv/yadv.css';
 import '@astryxdesign/theme-stone/fonts.css';
+import {ColorModeToggle, useColorMode} from './ColorMode';
+import type {ColorMode} from './ColorMode';
 import {GitHubMark} from './GitHubMark';
 import {Logo} from './Logo';
 
@@ -33,14 +35,19 @@ const NAV: ReadonlyArray<{label: string; href: string; pages: Page[]}> = [
 
 /** Theme, pinned header, page frame and footer shared by every page. */
 export function SiteShell({page, children}: {page: Page; children: ReactNode}) {
+  const colorMode = useColorMode();
   return (
-    <Theme theme={yadvTheme}>
+    <Theme theme={yadvTheme} mode={colorMode.mode}>
       <Layout
         height="fill"
         contentWidth={1200}
         header={
           <LayoutHeader hasDivider>
-            <Header page={page} />
+            <Header
+              page={page}
+              colorMode={colorMode.resolved}
+              onToggleColorMode={colorMode.toggle}
+            />
           </LayoutHeader>
         }
         content={
@@ -59,7 +66,15 @@ export function SiteShell({page, children}: {page: Page; children: ReactNode}) {
   );
 }
 
-function Header({page}: {page: Page}) {
+function Header({
+  page,
+  colorMode,
+  onToggleColorMode,
+}: {
+  page: Page;
+  colorMode: ColorMode;
+  onToggleColorMode: () => void;
+}) {
   // On phones the mark alone leaves room for every nav item.
   const isNarrow = useMediaQuery('(max-width: 560px)');
   return (
@@ -87,6 +102,10 @@ function Header({page}: {page: Page}) {
             href={GITHUB_ORG}
             isIconOnly
             icon={<Icon icon={GitHubMark} />}
+          />
+          <ColorModeToggle
+            resolved={colorMode}
+            onToggle={onToggleColorMode}
           />
         </HStack>
       }

@@ -10,6 +10,14 @@
       content="Old experiments and projects from YADV Labs, 2008 to 2013."
     />
     <link rel="canonical" href="https://labs.yadv.in/old/" />
+    <script>
+      try {
+        var mode = localStorage.getItem('yadv-color-mode');
+        if (mode === 'light' || mode === 'dark') {
+          document.documentElement.dataset.theme = mode;
+        }
+      } catch (e) {}
+    </script>
     <title>Old experiments · YADV Labs</title>
   </head>
   <body>

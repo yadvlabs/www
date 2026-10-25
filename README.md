@@ -47,6 +47,12 @@ editing the theme, or after upgrading Astryx, rebuild it:
 npx astryx theme build src/themes/yadv/yadvTheme.ts
 ```
 
+Visitors can switch between light and dark mode with the sun/moon button in the
+header (`src/components/ColorMode.tsx`). Until they pick one, the site follows
+their system setting. The choice is saved in `localStorage` under
+`yadv-color-mode`, and a short script in each page's `index.html` applies it
+before the page renders.
+
 The Astryx packages are pinned to the same version, so upgrade them together.
 
 ## Deploy

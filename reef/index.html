@@ -10,6 +10,14 @@
       content="Reef: self-hosted Git that works with your GitHub tools."
     />
     <link rel="canonical" href="https://labs.yadv.in/reef/" />
+    <script>
+      try {
+        var mode = localStorage.getItem('yadv-color-mode');
+        if (mode === 'light' || mode === 'dark') {
+          document.documentElement.dataset.theme = mode;
+        }
+      } catch (e) {}
+    </script>
     <title>Reef · YADV Labs</title>
   </head>
   <body>
